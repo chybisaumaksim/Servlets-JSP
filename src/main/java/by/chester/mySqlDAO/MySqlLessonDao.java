@@ -93,8 +93,8 @@ public class MySqlLessonDao implements LessonDao {
     private String getUpdateQuery() {
         return "UPDATE Lesson SET Lesson  = ? WHERE ID = ?";
     }
-    private String getCreateQuery() {    return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
-
+    private String getCreateQuery() {
+        return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
     }
     private String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE ID = ?; ";

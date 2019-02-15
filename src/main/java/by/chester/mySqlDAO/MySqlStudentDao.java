@@ -103,7 +103,7 @@ public class MySqlStudentDao implements StudentDao {
         return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ?;";
     }
     private String getDeleteQuery() {
-        return "DELETE FROM STUDENT WHERE id= ?;";
+        return "DELETE FROM STUDENT WHERE id = ? " ;
     }
     private String SelectIdQuery() {
         return "SELECT ID, First_Name, Second_Name, Birth_Date, Enter_Year FROM STUDENT WHERE ID = ? ; ";

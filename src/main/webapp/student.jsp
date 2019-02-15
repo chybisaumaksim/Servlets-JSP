@@ -25,5 +25,7 @@
         <td>${student.enterYear}</td>
     </tr>
     </c:forEach>
+</table>
+    <a href="${pageContext.request.contextPath}/index.jsp">Назад</a>
 </body>
 </html>

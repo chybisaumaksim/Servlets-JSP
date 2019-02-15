@@ -23,16 +23,16 @@ public class StudentServlet extends HttpServlet {
             pw = resp.getWriter();
             DaoFactory factory = new MySqlDaoFactory();
             List<Student> students =factory.getMySqlStudentDao().getAll();
-            pw.println("<B>Все студенты</B>");
-            pw.println("<table border=1>");
-            pw.println("<tr>");
-            pw.println("<td>Id</td>");
-            pw.println("<td>Name</td>");
-            pw.println("<td>Surname</td>");
-            pw.println("<td>BirthDate</td>");
-            pw.println("<td>EnterYear</td>");
-            pw.println("</tr>");
-            for (Student st: students) {
+                pw.println("<B>Все студенты</B>");
+                pw.println("<table border=1>");
+                pw.println("<tr>");
+                pw.println("<td>Id</td>");
+                pw.println("<td>Name</td>");
+                pw.println("<td>Surname</td>");
+                pw.println("<td>BirthDate</td>");
+                pw.println("<td>EnterYear</td>");
+                pw.println("</tr>");
+                for (Student st: students) {
                 pw.println("<tr>");
                 pw.println("<td>" + st.getId() + "</td>");
                 pw.println("<td>" + st.getName() + "</td>");
