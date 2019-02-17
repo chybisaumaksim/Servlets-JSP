@@ -26,6 +26,6 @@
     </tr>
     </c:forEach>
 </table>
-    <a href="${pageContext.request.contextPath}/index.jsp">Назад</a>
+    <a href="${pageContext.request.contextPath}/index.jsp">На главную</a>
 </body>
 </html>
