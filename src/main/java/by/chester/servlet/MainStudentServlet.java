@@ -26,13 +26,23 @@ public class MainStudentServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        int answer = 0;
+        int answer;
         try {
             answer = checkAction(req);
         } catch (Exception e) {
             throw new IOException(e.getMessage());
         }
         if (answer == 1) {
+            try{
+                DaoFactory factory = new MySqlDaoFactory();
+                List<Student> students =factory.getMySqlStudentDao().getAll();
+                req.setAttribute("students", students);
+                getServletContext().getRequestDispatcher("/student.jsp").forward(req, resp);
+            }   catch (IOException | ServletException | PersistException e) {
+                e.printStackTrace();
+            }
+        }
+        if (answer == 3) {
             try {
                 DaoFactory factory = new MySqlDaoFactory();
                 StudentDao studentDao = factory.getMySqlStudentDao();
@@ -43,69 +53,56 @@ public class MainStudentServlet extends HttpServlet {
                 student.setBirthDate(req.getParameter("birthDate"));
                 student.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
                 studentDao.create(student);
-                return;
             } catch (PersistException e) {
                 e.printStackTrace();
             }
         }
         if (answer == 2) {
-                try {
-                    DaoFactory factory = new MySqlDaoFactory();
-                    StudentDao studentDao = factory.getMySqlStudentDao();
-                    Student st4 = new Student();
-                    getServletContext().getRequestDispatcher("/StudentFrameUpdate.jsp").forward(req, resp);
-                    st4.setId(Integer.parseInt(req.getParameter("id")));
-                    st4.setName(req.getParameter("name"));
-                    st4.setSurname(req.getParameter("surname"));
-                    st4.setBirthDate(req.getParameter("birthDate"));
-                    st4.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
-                    studentDao.update(st4);
-                } catch (
-                        PersistException e) {
-                    e.printStackTrace();
-                }
+            try {
+                DaoFactory factory = new MySqlDaoFactory();
+                StudentDao studentDao = factory.getMySqlStudentDao();
+                Student st4 = new Student();
+                getServletContext().getRequestDispatcher("/StudentFrameUpdate.jsp").forward(req, resp);
+                st4.setId(Integer.parseInt(req.getParameter("id")));
+                st4.setName(req.getParameter("name"));
+                st4.setSurname(req.getParameter("surname"));
+                st4.setBirthDate(req.getParameter("birthDate"));
+                st4.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
+                studentDao.update(st4);
+            } catch (PersistException e) {
+                e.printStackTrace();
             }
-            if (answer == 3) {
-                try{
-                    DaoFactory factory = new MySqlDaoFactory();
-                    List<Student> students =factory.getMySqlStudentDao().getAll();
-                    req.setAttribute("students", students);
-                    getServletContext().getRequestDispatcher("/student.jsp").forward(req, resp);
-                }   catch (IOException | ServletException | PersistException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (answer == 4) {
-                try {
-                    String gs = req.getParameter("Id");
-                    DaoFactory factory = new MySqlDaoFactory();
-                    StudentDao studentDao = factory.getMySqlStudentDao();
-                    Student st5 = new Student();
+        }
+        if (answer == 4) {
+            try {
+                DaoFactory factory = new MySqlDaoFactory();
+                StudentDao studentDao = factory.getMySqlStudentDao();
+                Student st5 = new Student();
+                getServletContext().getRequestDispatcher("/StudentFrameDelete.jsp").forward(req, resp);
+                    st5.setId(Integer.parseInt(req.getParameter("id")));
                     studentDao.delete(st5);
-                    getServletContext().getRequestDispatcher("/delete.jsp").forward(req, resp);
-                } catch (
-                        PersistException e) {
+                } catch(PersistException e){
                     e.printStackTrace();
                 }
             }
         }
 
-        private int checkAction (HttpServletRequest req){
-            if (req.getParameter("Create") != null) {
-                return 1;
-            }
-            if (req.getParameter("Update") != null) {
-                return 2;
-            }
-            if (req.getParameter("getAll") != null) {
-                return 3;
-            }
-            if (req.getParameter("Delete") != null) {
-                return 4;
-            }
-            return -1;
+    private int checkAction (HttpServletRequest req){
+        if (req.getParameter("getAll") != null) {
+            return 1;
         }
+        if (req.getParameter("Update") != null) {
+            return 2;
+        }
+        if (req.getParameter("Create") != null) {
+            return 3;
+        }
+        if (req.getParameter("Delete") != null) {
+            return 4;
+        }
+        return -1;
     }
+}
 
 
 

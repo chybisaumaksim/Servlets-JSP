@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<form action="<c:url value="main?getAll"/>" method="POST">
+<form action="<c:url value="main?"/>" method="POST">
     <table>
         <tr>
             <td>Имя:</td><td><input type="text" name="name" value="${student.name}"/></td>

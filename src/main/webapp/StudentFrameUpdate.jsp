@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<form action="<c:url value="main?getAll"/>" method="POST">
+<form action="<c:url value="main?"/>" method="POST">
     <table>
         <tr>
             <td>Id:</td><td><input type="text" name="id" value="${student.id}"/></td>

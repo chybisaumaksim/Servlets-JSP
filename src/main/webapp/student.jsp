@@ -16,13 +16,13 @@
         <td>EnterYear</td>
     </tr>
 
-    <c:forEach items="${students}" var="student">
+    <c:forEach items="${students}" var="students">
     <tr>
-        <td>${student.id}</td>
-        <td>${student.name}</td>
-        <td>${student.surname}</td>
-        <td>${student.birthDate}</td>
-        <td>${student.enterYear}</td>
+        <td>${students.id}</td>
+        <td>${students.name}</td>
+        <td>${students.surname}</td>
+        <td>${students.birthDate}</td>
+        <td>${students.enterYear}</td>
     </tr>
     </c:forEach>
 </table>
