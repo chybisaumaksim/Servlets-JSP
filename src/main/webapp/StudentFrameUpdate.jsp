@@ -25,6 +25,7 @@
             <td>Год поступления:</td><td><input type="text" name="enterYear" value="${student.enterYear}"/></td>
         </tr>
     </table>
+
     <table>
         <tr>
             <td><input type="submit" value="OK" name="Update"/></td>
