@@ -28,6 +28,7 @@
             <td><input type="submit" value="Cancel" name="Cancel"/></td>
         </tr>
     </table>
+    <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
 </form>
 </body>
 </html>

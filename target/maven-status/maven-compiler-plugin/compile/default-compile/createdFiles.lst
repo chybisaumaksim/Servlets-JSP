@@ -4,15 +4,12 @@ by\chester\entities\Lesson.class
 by\chester\mySqlDAO\MySqlMarkDao.class
 by\chester\dao\DaoFactory.class
 by\chester\entities\Mark.class
-by\chester\servlet\StudentServletJSP.class
 by\chester\dao\PersistException.class
 by\chester\main\Main.class
-by\chester\servlet\LessonServlet.class
+by\chester\servlet\MainStudentServlet.class
 by\chester\mySqlDAO\MySqlDaoFactory.class
-by\chester\servlet\StudentServlet.class
 by\chester\entities\Student.class
 by\chester\dao\MarkDao.class
-by\chester\servlet\MarkServlet.class
 by\chester\servlet\LessonServletJSP.class
 by\chester\servlet\MarkServletJSP.class
 by\chester\dao\StudentDao.class

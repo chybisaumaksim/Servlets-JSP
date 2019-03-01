@@ -8,6 +8,7 @@
 
 <body>
 <form action="<c:url value="main?"/>" method="POST">
+    <%--<form action="Update"/>--%>
     <table>
         <tr>
             <td>Id:</td><td><input type="text" name="id" value="${student.id}"/></td>
@@ -28,7 +29,7 @@
 
     <table>
         <tr>
-            <td><input type="submit" value="OK" name="Update"/></td>
+            <td><input type="submit" value="Update" name="Update"/></td>
             <td><input type="submit" value="Cancel" name="Cancel"/></td>
         </tr>
     </table>

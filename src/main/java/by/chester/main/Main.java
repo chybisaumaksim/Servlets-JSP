@@ -1,12 +1,9 @@
 package by.chester.main;
 import by.chester.dao.*;
 import by.chester.mySqlDAO.MySqlDaoFactory;
-import by.chester.mySqlDAO.MySqlLessonDao;
-import by.chester.mySqlDAO.MySqlMarkDao;
 import by.chester.entities.Lesson;
 import by.chester.entities.Mark;
 import by.chester.entities.Student;
-
 import java.util.List;
 
 public class Main {
