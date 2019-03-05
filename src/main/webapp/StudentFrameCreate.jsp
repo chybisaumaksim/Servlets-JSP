@@ -3,19 +3,14 @@
 
 <html>
 <head>
-    <title>Обновление студента</title>
+    <title>Добавить студента</title>
 </head>
-
 <body>
-<form action="<c:url value="main"/>" method="POST">
+<form action="<c:url value="/main"/>" method="POST">
     <table>
         <td><% if (request.getAttribute("message") != null) { %>
             <%=request.getAttribute("message")%>
             <% } %></td>
-        <tr>
-            <td>Id:</td>
-            <td><input type="text" name="id" value="${student.id}" required pattern="^[0-9]+$"/></td>
-        </tr>
         <tr>
             <td>Имя:</td>
             <td><input type="text" name="name" value="${student.name}" required pattern="^[a-zA-Zа-яёА-ЯЁ]+$"/></td>
@@ -33,16 +28,16 @@
         <tr>
             <td>Год поступления:</td>
             <td><input type="text" name="enterYear" value="${student.enterYear}" required pattern="^[0-9]{4}"/></td>
+
         </tr>
     </table>
     <table>
         <tr>
-            <td><input type="submit" value="Update" name="Update"/></td>
+            <td><input type="submit" value="Create" name="Create"/></td>
             <td><input type="submit" value="Cancel" name="Cancel"/></td>
         </tr>
     </table>
-    <td><% if (request.getParameter("id") != null
-            && Integer.parseInt(request.getParameter("id")) > 0
+    <td><% if (request.getParameter("name") != null
             && request.getParameter("name").length() > 2
             && request.getParameter("name").length() < 15
             && request.getParameter("surname").length() > 2

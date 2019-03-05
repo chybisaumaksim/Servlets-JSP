@@ -7,32 +7,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76e80965-2899-47a6-ac67-1f5e63b3b382" name="Default Changelist" comment="commit 8&#10;22/02/19 14.30&#10;romped TOMCAT">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/a.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/b.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" afterDir="false" />
+    <list default="true" id="76e80965-2899-47a6-ac67-1f5e63b3b382" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/dao/DaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/dao/DaoFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/dao/LessonDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/dao/LessonDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/dao/MarkDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/dao/MarkDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/dao/PersistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/dao/PersistException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/dao/StudentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/entities/Lesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/entities/Lesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/entities/Mark.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/entities/Mark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/entities/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/entities/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlDaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlDaoFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlLessonDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlLessonDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlMarkDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlMarkDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlStudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlStudentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,24 +52,24 @@
     <session id="1647977299">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="46" />
-          <entry key="project.open.time.0" value="23" />
+          <entry key="project.closed" value="90" />
+          <entry key="project.open.time.0" value="66" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="6" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="55" />
+          <entry key="project.opened" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -94,18 +77,18 @@
           <entry key="cell" value="21" />
           <entry key="class" value="2" />
           <entry key="dummy" value="10" />
-          <entry key="java" value="1768" />
-          <entry key="jsp" value="1692" />
-          <entry key="txt" value="386" />
+          <entry key="java" value="2860" />
+          <entry key="jsp" value="2046" />
+          <entry key="txt" value="457" />
           <entry key="xml" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="1768" />
-          <entry key="JSP" value="1692" />
-          <entry key="PLAIN_TEXT" value="396" />
+          <entry key="JAVA" value="2860" />
+          <entry key="JSP" value="2046" />
+          <entry key="PLAIN_TEXT" value="467" />
           <entry key="Scratch" value="21" />
           <entry key="XML" value="114" />
         </counts>
@@ -115,8 +98,8 @@
           <entry key="class" value="15" />
           <entry key="classpath" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="122" />
-          <entry key="jsp" value="109" />
+          <entry key="java" value="135" />
+          <entry key="jsp" value="118" />
           <entry key="lesson" value="2" />
           <entry key="mark" value="1" />
           <entry key="project" value="1" />
@@ -131,8 +114,8 @@
           <entry key="CLASS" value="15" />
           <entry key="Database Element" value="5" />
           <entry key="Eclipse" value="2" />
-          <entry key="JAVA" value="122" />
-          <entry key="JSP" value="109" />
+          <entry key="JAVA" value="135" />
+          <entry key="JSP" value="118" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="6" />
           <entry key="Scratch" value="1" />
@@ -146,62 +129,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
-              <folding>
-                <element signature="e#2560#2561#0" expanded="true" />
-                <element signature="e#2602#2603#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
-                <element signature="method#update#0;class#MySqlStudentDao#0" />
-                <element signature="method#create#0;class#MySqlStudentDao#0" />
-                <element signature="method#delete#0;class#MySqlStudentDao#0" />
-                <element signature="method#getAll#0;class#MySqlStudentDao#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/DaoFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/LessonDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-616">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="193">
+              <caret line="166" column="13" lean-forward="true" selection-end-line="204" />
             </state>
           </provider>
         </entry>
@@ -209,33 +141,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlDaoFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="506">
               <caret line="31" column="77" selection-start-line="31" selection-start-column="77" selection-end-line="31" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlLessonDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/entities/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="44">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlMarkDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="98" column="8" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+            <state relative-caret-position="22">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
-                <element signature="method#MySqlMarkDao#0;class#MySqlMarkDao#0" />
-                <element signature="method#create#0;class#MySqlMarkDao#0" />
-                <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-                <element signature="method#update#0;class#MySqlMarkDao#0" />
-                <element signature="method#delete#0;class#MySqlMarkDao#0" />
+                <element signature="e#0#1096#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="18" column="14" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-63">
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="37" selection-end-line="52" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -243,8 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/MarkDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="242">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -263,8 +227,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -275,7 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/context.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/student.jsf.jsp" />
@@ -287,14 +250,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/hello.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlLessonDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/StudentServletCreate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/StudentServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/StudentServletDelete.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/StudentServletUpdate.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/StudentServletJSP.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/lesson.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/mark.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/StudentFrame.jsp" />
@@ -308,13 +269,22 @@
         <option value="$PROJECT_DIR$/src/main/webapp/MainFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/student.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete2.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/dao/MarkDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mypage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MyServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/mypage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" />
       </list>
     </option>
   </component>
@@ -347,10 +317,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-4" />
     <option name="width" value="1612" />
-    <option name="height" value="876" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -360,6 +330,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -371,11 +342,6 @@
             <path>
               <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
               <item name="Les1122" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Les1122" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -398,33 +364,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chester" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Les1122" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chester" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Les1122" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chester" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Les1122" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chester" type="462c0819:PsiDirectoryNode" />
-              <item name="mySqlDAO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
@@ -446,8 +385,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,7 +392,7 @@
     <property name="SearchEverywhereHistoryKey" value="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551448083338" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551731665880" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Servlets-JSP-102d194f6851e2b630f39fbfeb65897fc8e0c419" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -484,7 +421,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Tomcat Server.Tomcat2">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -498,79 +435,6 @@
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TOMCAT3" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.30" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="unnamed">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Les1122_6" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="52400" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Les1122:war" />
-          <artifact name="Les1122:war exploded" />
-        </option>
       </method>
     </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.30" ALTERNATIVE_JRE_ENABLED="false">
@@ -795,7 +659,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.TOMCAT3" />
       <item itemvalue="Tomcat Server.Tomcat" />
       <item itemvalue="Tomcat Server.Tomcat2" />
       <item itemvalue="Application.Main" />
@@ -869,7 +732,53 @@
       <workItem from="1551384726351" duration="657000" />
       <workItem from="1551433348165" duration="1307000" />
       <workItem from="1551437264114" duration="978000" />
-      <workItem from="1551438420297" duration="5093000" />
+      <workItem from="1551438420297" duration="9380000" />
+      <workItem from="1551454241700" duration="183000" />
+      <workItem from="1551454518046" duration="437000" />
+      <workItem from="1551455000570" duration="303000" />
+      <workItem from="1551455362223" duration="12000" />
+      <workItem from="1551455415640" duration="73000" />
+      <workItem from="1551456159007" duration="9000" />
+      <workItem from="1551456242912" duration="11000" />
+      <workItem from="1551456350911" duration="16000" />
+      <workItem from="1551456477343" duration="17000" />
+      <workItem from="1551456716152" duration="90000" />
+      <workItem from="1551456879800" duration="6000" />
+      <workItem from="1551456895869" duration="11000" />
+      <workItem from="1551456914603" duration="31000" />
+      <workItem from="1551457595215" duration="96000" />
+      <workItem from="1551457987804" duration="55000" />
+      <workItem from="1551459050176" duration="7000" />
+      <workItem from="1551459518679" duration="1110000" />
+      <workItem from="1551460649119" duration="249000" />
+      <workItem from="1551460917716" duration="241000" />
+      <workItem from="1551461309994" duration="345000" />
+      <workItem from="1551461680343" duration="110000" />
+      <workItem from="1551461815088" duration="11000" />
+      <workItem from="1551461837125" duration="8000" />
+      <workItem from="1551462036420" duration="27000" />
+      <workItem from="1551462079223" duration="591000" />
+      <workItem from="1551462711047" duration="23000" />
+      <workItem from="1551462818343" duration="162000" />
+      <workItem from="1551463211052" duration="13000" />
+      <workItem from="1551463334421" duration="86000" />
+      <workItem from="1551463435348" duration="267000" />
+      <workItem from="1551463720590" duration="11000" />
+      <workItem from="1551463746631" duration="67000" />
+      <workItem from="1551463836775" duration="365000" />
+      <workItem from="1551464473734" duration="45000" />
+      <workItem from="1551464529929" duration="261000" />
+      <workItem from="1551466164310" duration="689000" />
+      <workItem from="1551646238289" duration="622000" />
+      <workItem from="1551684924693" duration="1367000" />
+      <workItem from="1551690527602" duration="344000" />
+      <workItem from="1551690977605" duration="77000" />
+      <workItem from="1551691068755" duration="16000" />
+      <workItem from="1551691094774" duration="88000" />
+      <workItem from="1551691190713" duration="228000" />
+      <workItem from="1551691432835" duration="324000" />
+      <workItem from="1551691854279" duration="29596000" />
+      <workItem from="1551777758598" duration="7199000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2&#10;+JSP&#10;+LessonJSP, StudentJSP, MarkJSP&#10;+dependencies&#10;+MainStudentServlet">
       <created>1550136142981</created>
@@ -927,7 +836,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550840250907</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit 9&#10;01/03/19 16.00&#10;Student+&#10;JSP for all actions+&#10;validation 50/50 of ID">
+      <created>1551448696011</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551448696012</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -963,7 +879,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215857000" />
+    <option name="totallyTimeSpent" value="266043000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -975,10 +891,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="0" width="1612" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20876288" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20051414" />
       <window_info id="Structure" order="1" sideWeight="0.5054054" side_tool="true" weight="0.17802057" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -987,9 +903,9 @@
       <window_info id="Favorites" order="6" sideWeight="0.5054054" side_tool="true" weight="0.17802057" />
       <window_info id="Web" order="7" side_tool="true" weight="0.17802057" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4974293" visible="true" weight="0.28936744" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32974428" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4974293" visible="true" weight="0.3795424" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32839838" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32974428" />
@@ -1006,7 +922,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.10051546" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.10025707" />
       <window_info anchor="right" id="Database" order="6" weight="0.16623712" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -1090,58 +1006,8 @@
     <MESSAGE value="commit 6&#10;19/02/19 08.30&#10;for student create&amp;update jsp.&#10;All in one servlet&#10;+servlets&#10;+webapp to git" />
     <MESSAGE value="commit 7&#10;19/02/19 18.30&#10;before correction&#10;methods, action, try.." />
     <MESSAGE value="commit 8&#10;22/02/19 14.30&#10;romped TOMCAT" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 8&#10;22/02/19 14.30&#10;romped TOMCAT" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp</url>
-          <line>8</line>
-          <properties />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>49</line>
-          <properties />
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-    </breakpoint-manager>
+    <MESSAGE value="commit 9&#10;01/03/19 16.00&#10;Student+&#10;JSP for all actions+&#10;validation 50/50 of ID" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 9&#10;01/03/19 16.00&#10;Student+&#10;JSP for all actions+&#10;validation 50/50 of ID" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1162,18 +1028,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/delete.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/update.jsp" />
-    <entry file="file://$PROJECT_DIR$/.project" />
-    <entry file="file://$PROJECT_DIR$/.classpath" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14828">
-          <caret line="742" selection-start-line="742" selection-end-line="742" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4928">
@@ -1204,7 +1058,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/b.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/a.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jsp" />
     <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletContext.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1227,13 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10308.31539/App.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10308.31656/App.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa10308.31737/MoodSensor.class" />
@@ -1248,13 +1094,6 @@
     <entry file="file://$PROJECT_DIR$/../../../../PracticalTask04-master/PracticalTask04-master/threePoints/App.class" />
     <entry file="file://$PROJECT_DIR$/../../../../PracticalTask04-master/PracticalTask04-master/gregorianCalendar/NextDayValidator.class" />
     <entry file="file://$PROJECT_DIR$/../../../../PracticalTask04-master/PracticalTask04-master/gregorianCalendar/App.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/student.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://d1748af6-dffc-4e0b-b912-95a5cbabd520/schema/students_db/table/lesson" />
     <entry file="das://d1748af6-dffc-4e0b-b912-95a5cbabd520/schema/students_db/table/student" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
@@ -1278,80 +1117,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete2.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="65" lean-forward="true" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
-            <element signature="method#update#0;class#MySqlStudentDao#0" />
-            <element signature="method#create#0;class#MySqlStudentDao#0" />
-            <element signature="method#delete#0;class#MySqlStudentDao#0" />
-            <element signature="method#getAll#0;class#MySqlStudentDao#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/LessonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/MarkDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/PersistException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/DaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlDaoFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="77" selection-start-line="31" selection-start-column="77" selection-end-line="31" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -1362,28 +1131,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/DaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MyServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/student.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/LessonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlMarkDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="98" column="8" lean-forward="true" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+        <state relative-caret-position="374">
+          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete2.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/mypage.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/entities/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
-            <element signature="method#MySqlMarkDao#0;class#MySqlMarkDao#0" />
-            <element signature="method#create#0;class#MySqlMarkDao#0" />
-            <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-            <element signature="method#update#0;class#MySqlMarkDao#0" />
-            <element signature="method#delete#0;class#MySqlMarkDao#0" />
+            <element signature="e#0#1096#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/MarkDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/PersistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlDaoFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="31" column="77" selection-start-line="31" selection-start-column="77" selection-end-line="31" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="18" column="14" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
-          <folding>
-            <element signature="e#2560#2561#0" expanded="true" />
-            <element signature="e#2602#2603#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="193">
+          <caret line="166" column="13" lean-forward="true" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="37" selection-end-line="52" selection-end-column="7" />
         </state>
       </provider>
     </entry>

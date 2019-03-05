@@ -10,7 +10,5 @@ by\chester\servlet\MainStudentServlet.class
 by\chester\mySqlDAO\MySqlDaoFactory.class
 by\chester\entities\Student.class
 by\chester\dao\MarkDao.class
-by\chester\servlet\LessonServletJSP.class
-by\chester\servlet\MarkServletJSP.class
 by\chester\dao\StudentDao.class
 by\chester\mySqlDAO\MySqlLessonDao.class
