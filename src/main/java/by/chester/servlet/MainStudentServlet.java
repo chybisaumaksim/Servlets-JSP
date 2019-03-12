@@ -1,37 +1,24 @@
 package by.chester.servlet;
 
-import by.chester.dao.DaoFactory;
 import by.chester.dao.PersistException;
 import by.chester.dao.StudentDao;
 import by.chester.entities.Student;
 import by.chester.mySqlDAO.MySqlDaoFactory;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebListener;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/main")
-public class MainStudentServlet extends HttpServlet {
-    private StudentDao studentDao;
-    private DaoFactory factory;
+@WebListener
+public class MainStudentServlet extends HttpServlet implements HttpSessionListener {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            factory = new MySqlDaoFactory();
-            studentDao = factory.getMySqlStudentDao();
-        } catch (PersistException e) {
-            e.printStackTrace();
-        }
         processRequest(req, resp);
     }
 
@@ -43,29 +30,31 @@ public class MainStudentServlet extends HttpServlet {
             throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         String action = checkAction(req);
+        HttpSession session = req.getSession();
+        StudentDao studentDao = (StudentDao) session.getAttribute("studentDao");
         if (action == "getAll") {
-            getAllStudents(req, resp);
+            getAllStudents(req, resp, studentDao);
         } else if (action == "Create") {
-            createStudent(req, resp);
+            createStudent(req, resp, studentDao);
         } else if (action == "Update") {
-            updateStudent(req, resp);
+            updateStudent(req, resp, studentDao);
         } else if (action == "Delete") {
-            deleteStudent(req, resp);
+            deleteStudent(req, resp, studentDao);
         }
     }
 
-    private void deleteStudent(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private void deleteStudent(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) throws ServletException, IOException {
         try {
             Student st5 = new Student();
             String id = req.getParameter("id");
-            if (validationId(id)) {
+            if (id == null) {
+                req.setAttribute("message", "Welcome");
+            } else if (validationId(id)) {
                 st5.setId(Integer.parseInt(id));
                 studentDao.delete(st5);
                 req.setAttribute("message", "Thank You");
-            } else if (id == null) {
-                req.setAttribute("message", "Welcome");
             } else {
-                req.setAttribute("message", "Incorrect format of ID. Try again");
+                req.setAttribute("message", "Incorrect format of ID");
             }
             getServletContext().getRequestDispatcher("/StudentFrameDelete.jsp").forward(req, resp);
         } catch (PersistException | NumberFormatException | IOException | ServletException e) {
@@ -73,10 +62,13 @@ public class MainStudentServlet extends HttpServlet {
         }
     }
 
-    private void updateStudent(HttpServletRequest req, HttpServletResponse resp) {
+    private void updateStudent(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) {
         try {
             Student st4 = new Student();
-            if (validationId(req.getParameter("id"))
+            List<String> messages = new ArrayList<>();
+            if (req.getParameter("id") == null) {
+                req.setAttribute("message", "Welcome");
+            } else if (validationId(req.getParameter("id"))
                     && validationNameAndSurname(req.getParameter("name"))
                     && validationNameAndSurname(req.getParameter("surname"))
                     && validationBirthDate(req.getParameter("birthDate"))
@@ -88,18 +80,23 @@ public class MainStudentServlet extends HttpServlet {
                 st4.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
                 studentDao.update(st4);
                 req.setAttribute("message", "Thank You");
-            } else if (req.getParameter("id") == null) {
-                req.setAttribute("message", "Welcome");
-            } else if (!validationId(req.getParameter("id"))) {
-                req.setAttribute("message", "Incorrect format of ID. Try again");
-            } else if (!validationNameAndSurname(req.getParameter("name"))) {
-                req.setAttribute("message", "Incorrect format of name. Try again");
-            } else if (!validationNameAndSurname(req.getParameter("surname"))) {
-                req.setAttribute("message", "Incorrect format of surname. Try again");
-            } else if (!validationBirthDate(req.getParameter("birthDate"))) {
-                req.setAttribute("message", "Incorrect format of birthDate. Try again");
-            } else if (!validationYear(req.getParameter("enterYear"))) {
-                req.setAttribute("message", "Incorrect year of entry. Try again");
+            } else {
+                messages.add("incorrect format of ID");
+            }
+            if (req.getParameter("name") != null && !validationNameAndSurname(req.getParameter("name"))) {
+                messages.add("incorrect format of name");
+            }
+            if (req.getParameter("surname") != null && !validationNameAndSurname(req.getParameter("surname"))) {
+                messages.add("incorrect format of surname");
+            }
+            if (req.getParameter("birthDate") != null && !validationBirthDate(req.getParameter("birthDate"))) {
+                messages.add("incorrect format of birthDate");
+            }
+            if (req.getParameter("enterYear") != null && !validationYear(req.getParameter("enterYear"))) {
+                messages.add("incorrect year of entry");
+            }
+            if (messages.size() > 0) {
+                req.setAttribute("message", messages);
             }
             getServletContext().getRequestDispatcher("/StudentFrameUpdate.jsp").forward(req, resp);
         } catch (PersistException | ServletException | IOException e) {
@@ -107,10 +104,12 @@ public class MainStudentServlet extends HttpServlet {
         }
     }
 
-    private void createStudent(HttpServletRequest req, HttpServletResponse resp) {
+    private void createStudent(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) {
         try {
             Student st2 = new Student();
-            if (validationNameAndSurname(req.getParameter("name"))
+            if (req.getParameter("name") == null) {
+                req.setAttribute("message", "Welcome");
+            } else if (validationNameAndSurname(req.getParameter("name"))
                     && validationNameAndSurname(req.getParameter("surname"))
                     && validationBirthDate(req.getParameter("birthDate"))
                     && validationYear(req.getParameter("enterYear"))) {
@@ -119,17 +118,26 @@ public class MainStudentServlet extends HttpServlet {
                 st2.setBirthDate(req.getParameter("birthDate"));
                 st2.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
                 studentDao.create(st2);
-                req.setAttribute("message", "Thank You");
-            } else if (req.getParameter("name") == null ) {
-                req.setAttribute("message", "Welcome");
-            } else if (!validationNameAndSurname(req.getParameter("name"))) {
-                req.setAttribute("message", "Incorrect format of name. Try again");
-            } else if (!validationNameAndSurname(req.getParameter("surname"))) {
-                req.setAttribute("message", "Incorrect format of surname. Try again");
-            } else if (!validationBirthDate(req.getParameter("birthDate"))) {
-                req.setAttribute("message", "Incorrect format of birthdate. Try again");
-            } else if (!validationYear(req.getParameter("enterYear"))) {
-                req.setAttribute("message", "Incorrect year of entry. Try again");
+            }
+            req.setAttribute("message", "Thank You");
+            List<String> messages = new ArrayList<>();
+            if (req.getParameter("id") != null && !validationId(req.getParameter("id"))) {
+                messages.add("incorrect format of ID");
+            }
+            if (req.getParameter("name") != null && !validationNameAndSurname(req.getParameter("name"))) {
+                messages.add("incorrect format of name");
+            }
+            if (req.getParameter("surname") != null && !validationNameAndSurname(req.getParameter("surname"))) {
+                messages.add("incorrect format of surname");
+            }
+            if (req.getParameter("birthDate") != null && !validationBirthDate(req.getParameter("birthDate"))) {
+                messages.add("incorrect format of birthDate");
+            }
+            if (req.getParameter("enterYear") != null && !validationYear(req.getParameter("enterYear"))) {
+                messages.add("incorrect year of entry");
+            }
+            if (messages.size() > 0) {
+                req.setAttribute("message", messages);
             }
             getServletContext().getRequestDispatcher("/StudentFrameCreate.jsp").forward(req, resp);
         } catch (PersistException | ServletException | IOException e) {
@@ -137,9 +145,9 @@ public class MainStudentServlet extends HttpServlet {
         }
     }
 
-    private void getAllStudents(HttpServletRequest req, HttpServletResponse resp) {
+    private void getAllStudents(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) {
         try {
-            List<Student> students = factory.getMySqlStudentDao().getAll();
+            List<Student> students = studentDao.getAll();
             req.setAttribute("students", students);
             getServletContext().getRequestDispatcher("/student.jsp").forward(req, resp);
         } catch (PersistException | ServletException | IOException e) {
@@ -173,11 +181,7 @@ public class MainStudentServlet extends HttpServlet {
     }
 
     public boolean validationNameAndSurname(String name) {
-        try {
-            return name != null && name.length() > 2 && name.length() < 15;
-        } catch (Exception e) {
-            return false;
-        }
+        return name != null && name.length() > 2 && name.length() < 15;
     }
 
     public boolean validationYear(String enterYear) {
@@ -198,7 +202,28 @@ public class MainStudentServlet extends HttpServlet {
             return false;
         }
     }
+
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+        try {
+            se.getSession().setAttribute("studentDao", new MySqlDaoFactory().getMySqlStudentDao());
+            System.out.println(" (session) Initial :ID = "
+                    + se.getSession().getId());
+        } catch (PersistException e) {
+            System.err.println("Ошибка создания сессии"+e.getMessage());
+        }
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        HttpSession session = se.getSession();
+        StudentDao studentDao = (StudentDao) session.getAttribute("studentDao");
+        try {
+            studentDao.close();
+            System.out.println(" (session) Destroyed: ID= "
+                    + session.getId());
+        } catch (PersistException e) {
+            System.err.println("Ошибка закрытия сессии"+e.getMessage());
+        }
+    }
 }
-
-
-

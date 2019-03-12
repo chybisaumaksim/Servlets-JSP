@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
 <head>
     <title>Обновление студента</title>
@@ -8,10 +7,12 @@
 
 <body>
 <form action="<c:url value="main"/>" method="POST">
+    <b><% if (request.getAttribute("message") != null) { %>
+        <c:forEach items="${message}" var="message">
+            <br>${message}
+        </c:forEach>
+        <% } %></b>
     <table>
-        <td><% if (request.getAttribute("message") != null) { %>
-            <%=request.getAttribute("message")%>
-            <% } %></td>
         <tr>
             <td>Id:</td>
             <td><input type="text" name="id" value="${student.id}" required pattern="^[0-9]+$"/></td>
@@ -41,17 +42,6 @@
             <td><input type="submit" value="Cancel" name="Cancel"/></td>
         </tr>
     </table>
-    <td><% if (request.getParameter("id") != null
-            && Integer.parseInt(request.getParameter("id")) > 0
-            && request.getParameter("name").length() > 2
-            && request.getParameter("name").length() < 15
-            && request.getParameter("surname").length() > 2
-            && request.getParameter("surname").length() < 15
-            && Integer.parseInt(request.getParameter("enterYear")) > 1900
-            && Integer.parseInt(request.getParameter("enterYear")) < 2030
-    ) { %>
-        Thank You
-        <% } %></td>
     <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
 </form>
 </body>
