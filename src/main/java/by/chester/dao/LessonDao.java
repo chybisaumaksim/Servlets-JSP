@@ -1,5 +1,6 @@
 package by.chester.dao;
 import by.chester.entities.Lesson;
+
 import java.util.List;
 
 public interface LessonDao {
@@ -9,4 +10,5 @@ public interface LessonDao {
     void update (Lesson lesson) throws PersistException;
     void delete (Lesson lesson) throws PersistException;
     void close() throws PersistException;
+    Lesson getById (int id) throws PersistException;
 }

@@ -75,39 +75,27 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
     }
 
     private void updateStudent(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) throws PersistException, IOException, ServletException {
-        Student student = null;
         try {
             boolean nameIsValid = validationNameAndSurname(req.getParameter("name"));
             boolean surnameIsValid = validationNameAndSurname(req.getParameter("surname"));
             boolean birthDateIsValid = validationBirthDate(req.getParameter("birthDate"));
             boolean yearIsValid = validationYear(req.getParameter("enterYear"));
-            HttpSession session = req.getSession();
-            if (session.getAttribute("id") == null) {
-                session.setAttribute("id", req.getParameter("id"));
-            }
-            String id = null;
+            String id = req.getParameter("id");
             if (!nameIsValid) {
-                student = studentDao.getById(Integer.parseInt(req.getParameter("id")));
-                req.setAttribute("student", student);
-            } else {
-                id = (String) session.getAttribute("id");
+                req.setAttribute("student", studentDao.getById(Integer.parseInt(id)));
             }
             List<String> messages = new ArrayList<>();
             if (id == null) {
             } else if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
-                Student student1 = new Student();
-                student1.setId(Integer.parseInt(id));
-                student1.setName(req.getParameter("name"));
-                student1.setSurname(req.getParameter("surname"));
-                student1.setBirthDate(req.getParameter("birthDate"));
-                student1.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
-                studentDao.update(student1);
-                req.setAttribute("student", student1);
-//                if (!student.equals(student1)) {
-                    req.setAttribute("message", "Студент обновлен успешно");
-//                } else {
-//                    req.setAttribute("message", "Ошибка обновления студента");
-//                }
+                Student student = new Student();
+                student.setId(Integer.parseInt(id));
+                student.setName(req.getParameter("name"));
+                student.setSurname(req.getParameter("surname"));
+                student.setBirthDate(req.getParameter("birthDate"));
+                student.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
+                studentDao.update(student);
+                req.setAttribute("student", student);
+                req.setAttribute("message", "Студент обновлен успешно");
             }
             if (req.getParameter("name") != null && !nameIsValid) {
                 messages.add("неверный формат имени");

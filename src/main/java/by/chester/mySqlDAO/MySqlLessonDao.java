@@ -1,7 +1,9 @@
 package by.chester.mySqlDAO;
+
 import by.chester.dao.LessonDao;
 import by.chester.dao.PersistException;
 import by.chester.entities.Lesson;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,9 +27,10 @@ public class MySqlLessonDao implements LessonDao {
             statementDelete = connection.prepareStatement(getDeleteQuery());
             statementSelectID = connection.prepareStatement(SelectIdQuery());
         } catch (SQLException e) {
-            throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
+            throw new PersistException("Ошибка при создании prepareStatement в классе " + getClass(), e);
         }
     }
+
     public void create(Lesson lesson) throws PersistException {
         ResultSet generatedId = null;
         try {
@@ -40,20 +43,22 @@ public class MySqlLessonDao implements LessonDao {
             }
         } catch (Exception e) {
             throw new PersistException("Невозможно записать данные в БД", e);
-        }finally {
+        } finally {
             try {
                 if (generatedId != null) {
                     generatedId.close();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
     }
+
     public List<Lesson> getAll() throws PersistException {
-        ResultSet rs=null;
+        ResultSet rs = null;
         List list = new ArrayList<>();
-        try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
+        try {
+            PreparedStatement stm = connection.prepareStatement(getSelectAll());
             rs = stm.executeQuery();
             while (rs.next()) {
                 Lesson l = new Lesson();
@@ -63,18 +68,19 @@ public class MySqlLessonDao implements LessonDao {
             }
         } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
-        }finally {
+        } finally {
             try {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
         return list;
     }
-    public void update (Lesson lesson) throws PersistException {
+
+    public void update(Lesson lesson) throws PersistException {
         try {
             prepareStatementForUpdate(statementUpdate, lesson);
             statementUpdate.executeUpdate();
@@ -82,37 +88,70 @@ public class MySqlLessonDao implements LessonDao {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
-    public void delete (Lesson lesson) throws PersistException {
+
+    public void delete(Lesson lesson) throws PersistException {
         try {
             prepareStatementForDelete(statementDelete, lesson);
             statementDelete.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
+
+    public Lesson getById(int id) throws PersistException {
+        Lesson lesson = new Lesson();
+        ResultSet rs = null;
+        try {
+            PreparedStatement stm = connection.prepareStatement(SelectIdQuery());
+            stm.setInt(1, id);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                lesson.setId(rs.getInt(1));
+                lesson.setLesson(rs.getString(2));
+            }
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка обращения к БД ", e);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (Exception e) {
+                throw new PersistException("Ошибка закрытия потока", e);
+            }
+        }
+        return lesson;
+    }
+
     private String getUpdateQuery() {
         return "UPDATE Lesson SET Lesson  = ? WHERE ID = ?";
     }
+
     private String getCreateQuery() {
         return "INSERT INTO Lesson (ID, Lesson) VALUES (?, ?); ";
     }
+
     private String getDeleteQuery() {
         return "DELETE FROM Lesson WHERE ID = ?; ";
     }
+
     private String getSelectAll() {
         return "SELECT ID, Lesson FROM Lesson ; ";
     }
+
     private String SelectIdQuery() {
         return "SELECT ID, Lesson FROM Lesson WHERE ID = ? ;";
     }
+
     private void prepareStatementForInsert(PreparedStatement statement, Lesson object) throws PersistException {
-            try {
-                statement.setInt(1, object.getId());
-                statement.setString(2, object.getLesson());
-            } catch (SQLException e) {
-                throw new PersistException("Ошибка получения prepareStatementForInsert", e);
-            }
+        try {
+            statement.setInt(1, object.getId());
+            statement.setString(2, object.getLesson());
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка получения prepareStatementForInsert", e);
+        }
     }
+
     private void prepareStatementForUpdate(PreparedStatement statement, Lesson object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
@@ -121,6 +160,7 @@ public class MySqlLessonDao implements LessonDao {
             throw new PersistException("Ошибка получения prepareStatementForUpdate", e);
         }
     }
+
     private void prepareStatementForDelete(PreparedStatement statement, Lesson object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
@@ -128,33 +168,34 @@ public class MySqlLessonDao implements LessonDao {
             throw new PersistException("Ошибка получения prepareStatementForDelete", e);
         }
     }
+
     public void close() throws PersistException {
         try {
-            if(statementDelete != null)
+            if (statementDelete != null)
                 statementDelete.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementDelete ", e);
         }
         try {
-            if(statementCreate != null)
+            if (statementCreate != null)
                 statementCreate.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementCreate ", e);
         }
         try {
-            if(statementUpdate != null)
+            if (statementUpdate != null)
                 statementUpdate.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementUpdate ", e);
         }
         try {
-            if(statementSelectID != null)
+            if (statementSelectID != null)
                 statementSelectID.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementSelectID ", e);
         }
         try {
-            if(connection != null)
+            if (connection != null)
                 connection.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия Connection ", e);

@@ -57,7 +57,7 @@ public class MySqlStudentDao implements StudentDao {
                 if (generatedId != null) {
                     generatedId.close();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока ", e);
             }
         }
@@ -75,7 +75,8 @@ public class MySqlStudentDao implements StudentDao {
     public List<Student> getAll() throws PersistException {
         ArrayList list = new ArrayList();
         ResultSet rs = null;
-        try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
+        try {
+            PreparedStatement stm = connection.prepareStatement(getSelectAll());
             rs = stm.executeQuery();
             while (rs.next()) {
                 Student st = new Student();
@@ -93,7 +94,7 @@ public class MySqlStudentDao implements StudentDao {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -104,22 +105,24 @@ public class MySqlStudentDao implements StudentDao {
         Student student = new Student();
         ResultSet rs = null;
         try {
-            PreparedStatement stmt = connection.prepareStatement(SelectIdQuery());
-            stmt.setInt(1, id);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                student.setId(rs.getInt(1));
-                student.setName(rs.getString(2));
-                student.setSurname(rs.getString(3));
-                student.setBirthDate(rs.getString(4));
-                student.setEnterYear(rs.getInt(5));
-            }
+            PreparedStatement stm = connection.prepareStatement(SelectIdQuery());
+                stm.setInt(1, id);
+                rs = stm.executeQuery();
+                while (rs.next()) {
+                    student.setId(rs.getInt(1));
+                    student.setName(rs.getString(2));
+                    student.setSurname(rs.getString(3));
+                    student.setBirthDate(rs.getString(4));
+                    student.setEnterYear(rs.getInt(5));
+                }
         } catch (SQLException e) {
             throw new PersistException("Ошибка обращения к БД ", e);
         } finally {
             try {
-                rs.close();
-            } catch (SQLException e) {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }

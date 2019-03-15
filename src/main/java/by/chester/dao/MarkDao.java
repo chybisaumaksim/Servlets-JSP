@@ -1,5 +1,7 @@
 package by.chester.dao;
 import by.chester.entities.Mark;
+import by.chester.entities.Student;
+
 import java.util.List;
 
 public interface MarkDao {
@@ -9,4 +11,5 @@ public interface MarkDao {
     void update (Mark mark) throws PersistException;
     void delete (Mark mark) throws PersistException;
     void close() throws PersistException;
+    Mark getById (int id) throws PersistException;
 }

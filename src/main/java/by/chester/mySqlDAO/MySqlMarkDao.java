@@ -1,7 +1,9 @@
 package by.chester.mySqlDAO;
+
 import by.chester.dao.MarkDao;
 import by.chester.entities.Mark;
 import by.chester.dao.PersistException;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,9 +27,10 @@ public class MySqlMarkDao implements MarkDao {
             statementDelete = connection.prepareStatement(getDeleteQuery());
             statementSelectID = connection.prepareStatement(SelectIdQuery());
         } catch (SQLException e) {
-            throw new PersistException("Ошибка при создании prepareStatement в классе "+getClass(), e);
+            throw new PersistException("Ошибка при создании prepareStatement в классе " + getClass(), e);
         }
     }
+
     public void create(Mark mark) throws PersistException {
         ResultSet generatedId = null;
         try {
@@ -40,43 +43,46 @@ public class MySqlMarkDao implements MarkDao {
             }
         } catch (Exception e) {
             throw new PersistException(" Невозможно записать данные в БД", e);
-        }finally {
+        } finally {
             try {
                 if (generatedId != null) {
                     generatedId.close();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
     }
-    public List<Mark> getAll () throws PersistException {
-        ArrayList list= new ArrayList();
-        ResultSet rs=null;
-        try (PreparedStatement stm = connection.prepareStatement(getSelectAll())) {
+
+    public List<Mark> getAll() throws PersistException {
+        ArrayList list = new ArrayList();
+        ResultSet rs = null;
+        try {
+            PreparedStatement stm = connection.prepareStatement(getSelectAll());
             rs = stm.executeQuery();
             while (rs.next()) {
-                        Mark m = new Mark();
-                        m.setId(rs.getInt(1));
-                        m.setStudentId(rs.getInt(2));
-                        m.setLessonId(rs.getInt(3));
-                        m.setMark(rs.getInt(4));
-                        list.add(m);
-                    }
+                Mark m = new Mark();
+                m.setId(rs.getInt(1));
+                m.setStudentId(rs.getInt(2));
+                m.setLessonId(rs.getInt(3));
+                m.setMark(rs.getInt(4));
+                list.add(m);
+            }
         } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
-        }finally {
+        } finally {
             try {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
-        return  list;
+        return list;
     }
-    public void update (Mark mark) throws PersistException {
+
+    public void update(Mark mark) throws PersistException {
         try {
             prepareStatementForUpdate(statementUpdate, mark);
             statementUpdate.executeUpdate();
@@ -84,7 +90,8 @@ public class MySqlMarkDao implements MarkDao {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
-    public void delete (Mark mark) throws PersistException {
+
+    public void delete(Mark mark) throws PersistException {
         try {
             prepareStatementForDelete(statementDelete, mark);
             statementDelete.executeUpdate();
@@ -92,19 +99,54 @@ public class MySqlMarkDao implements MarkDao {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
+
+    public Mark getById(int id) throws PersistException {
+        Mark mark = new Mark();
+        ResultSet rs = null;
+        try {
+            PreparedStatement stm = connection.prepareStatement(SelectIdQuery());
+            stm.setInt(1, id);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                mark.setId(rs.getInt(1));
+                mark.setStudentId(rs.getInt(2));
+                mark.setLessonId(rs.getInt(3));
+                mark.setMark(rs.getInt(4));
+            }
+        } catch (SQLException e) {
+            throw new PersistException("Ошибка обращения к БД ", e);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (Exception e) {
+                throw new PersistException("Ошибка закрытия потока", e);
+            }
+        }
+        return mark;
+    }
+
     private String getSelectAll() {
         return "SELECT id, student_Id, lesson_Id, mark FROM mark ";
     }
+
     private String getCreateQuery() {
         return "INSERT INTO Mark (student_Id, lesson_Id, mark) VALUES (?, ?, ?);";
     }
-    private String getUpdateQuery(){
+
+    private String getUpdateQuery() {
         return "UPDATE Mark SET MARK = ? WHERE id = ? ";
     }
-    private String getDeleteQuery() {return "DELETE FROM Mark WHERE id= ?;"; }
+
+    private String getDeleteQuery() {
+        return "DELETE FROM Mark WHERE id= ?;";
+    }
+
     private String SelectIdQuery() {
-            return "SELECT id, student_Id, lesson_Id, mark FROM mark WHERE ID = ? ; ";
-        }
+        return "SELECT id, student_Id, lesson_Id, mark FROM mark WHERE ID = ? ; ";
+    }
+
     private void prepareStatementForInsert(PreparedStatement statement, Mark object) throws PersistException {
         try {
             statement.setInt(1, object.getStudentId());
@@ -114,6 +156,7 @@ public class MySqlMarkDao implements MarkDao {
             throw new PersistException("Ошибка получения prepareStatementForInsert", e);
         }
     }
+
     private void prepareStatementForUpdate(PreparedStatement statement, Mark object) throws PersistException {
         try {
             statement.setInt(2, object.getId());
@@ -123,6 +166,7 @@ public class MySqlMarkDao implements MarkDao {
 
         }
     }
+
     private void prepareStatementForDelete(PreparedStatement statement, Mark object) throws PersistException {
         try {
             statement.setInt(1, object.getId());
@@ -131,33 +175,34 @@ public class MySqlMarkDao implements MarkDao {
 
         }
     }
+
     public void close() throws PersistException {
         try {
-            if(statementDelete != null)
+            if (statementDelete != null)
                 statementDelete.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementDelete ", e);
         }
         try {
-            if(statementCreate != null)
+            if (statementCreate != null)
                 statementCreate.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementCreate ", e);
         }
         try {
-            if(statementUpdate != null)
+            if (statementUpdate != null)
                 statementUpdate.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия statementUpdate ", e);
         }
         try {
-            if(statementSelectID != null)
+            if (statementSelectID != null)
                 statementSelectID.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка  закрытия statementSelectID ", e);
         }
         try {
-            if(connection != null)
+            if (connection != null)
                 connection.close();
         } catch (SQLException e) {
             throw new PersistException("Ошибка закрытия Connection ", e);
