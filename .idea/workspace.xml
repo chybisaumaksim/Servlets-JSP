@@ -9,10 +9,16 @@
   <component name="ChangeListManager">
     <list default="true" id="76e80965-2899-47a6-ac67-1f5e63b3b382" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/dao/StudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/dao/StudentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlStudentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/by/chester/mySqlDAO/MySqlStudentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,6 +30,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Les1122$Main.ic" NAME="Main Coverage Results" MODIFIED="1552601339540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>by.chester.main.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Les1122$All_Features_in__WEB_INF.ic" NAME="All Features in: WEB-INF Coverage Results" MODIFIED="1550733967603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cucumber.api.cli.*</FILTER>
     </SUITE>
@@ -59,11 +68,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="students_db: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="students_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
     </expand>
     <select />
   </component>
@@ -71,12 +75,12 @@
     <session id="1647977299">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="103" />
-          <entry key="project.open.time.0" value="68" />
+          <entry key="project.closed" value="159" />
+          <entry key="project.open.time.0" value="120" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="3" />
-          <entry key="project.open.time.11" value="10" />
-          <entry key="project.open.time.12" value="5" />
+          <entry key="project.open.time.11" value="12" />
+          <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -85,11 +89,12 @@
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.20" value="3" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="116" />
+          <entry key="project.opened" value="172" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -97,47 +102,47 @@
           <entry key="cell" value="21" />
           <entry key="class" value="2" />
           <entry key="dummy" value="10" />
-          <entry key="java" value="4884" />
-          <entry key="jsp" value="2166" />
-          <entry key="txt" value="575" />
+          <entry key="java" value="6785" />
+          <entry key="jsp" value="2445" />
+          <entry key="txt" value="614" />
           <entry key="xml" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="4884" />
-          <entry key="JSP" value="2166" />
-          <entry key="PLAIN_TEXT" value="585" />
+          <entry key="JAVA" value="6785" />
+          <entry key="JSP" value="2445" />
+          <entry key="PLAIN_TEXT" value="624" />
           <entry key="Scratch" value="21" />
           <entry key="XML" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="15" />
+          <entry key="class" value="18" />
           <entry key="classpath" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="147" />
-          <entry key="jsp" value="125" />
+          <entry key="java" value="169" />
+          <entry key="jsp" value="132" />
           <entry key="lesson" value="3" />
           <entry key="mark" value="2" />
           <entry key="project" value="1" />
-          <entry key="properties" value="6" />
+          <entry key="properties" value="7" />
           <entry key="sql" value="1" />
-          <entry key="student" value="3" />
+          <entry key="student" value="5" />
           <entry key="xml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="15" />
-          <entry key="Database Element" value="8" />
+          <entry key="CLASS" value="18" />
+          <entry key="Database Element" value="10" />
           <entry key="Eclipse" value="2" />
-          <entry key="JAVA" value="147" />
-          <entry key="JSP" value="125" />
+          <entry key="JAVA" value="169" />
+          <entry key="JSP" value="132" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="6" />
+          <entry key="Properties" value="7" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="10" />
         </counts>
@@ -152,75 +157,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="211" column="58" lean-forward="true" selection-start-line="211" selection-start-column="58" selection-end-line="211" selection-end-column="58" />
+            <state relative-caret-position="231">
+              <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#doPost#0;class#MainStudentServlet#0" />
                 <element signature="method#deleteStudent#0;class#MainStudentServlet#0" />
-                <element signature="method#updateStudent#0;class#MainStudentServlet#0" />
                 <element signature="method#createStudent#0;class#MainStudentServlet#0" />
                 <element signature="method#getAllStudents#0;class#MainStudentServlet#0" />
                 <element signature="method#checkAction#0;class#MainStudentServlet#0" />
-                <element signature="method#validationId#0;class#MainStudentServlet#0" />
-                <element signature="method#validationNameAndSurname#0;class#MainStudentServlet#0" />
-                <element signature="method#validationYear#0;class#MainStudentServlet#0" />
-                <element signature="method#validationBirthDate#0;class#MainStudentServlet#0" />
+                <element signature="method#sessionCreated#0;class#MainStudentServlet#0" />
+                <element signature="method#sessionDestroyed#0;class#MainStudentServlet#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MySessionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="21" column="7" selection-start-column="2" selection-end-line="35" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/student.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" selection-start-line="9" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -228,36 +175,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="286">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlMarkDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
+            <state relative-caret-position="220">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
               <folding>
-                <element signature="method#create#0;class#MySqlMarkDao#0" />
-                <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-                <element signature="method#update#0;class#MySqlMarkDao#0" />
-                <element signature="method#delete#0;class#MySqlMarkDao#0" />
-                <element signature="method#prepareStatementForInsert#0;class#MySqlMarkDao#0" />
-                <element signature="method#prepareStatementForUpdate#0;class#MySqlMarkDao#0" />
-                <element signature="method#prepareStatementForDelete#0;class#MySqlMarkDao#0" />
-                <element signature="method#close#0;class#MySqlMarkDao#0" />
+                <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
+                <element signature="method#update#0;class#MySqlStudentDao#0" />
+                <element signature="method#create#0;class#MySqlStudentDao#0" />
+                <element signature="method#delete#0;class#MySqlStudentDao#0" />
+                <element signature="method#getAll#0;class#MySqlStudentDao#0" />
+                <element signature="method#getCreateQuery#0;class#MySqlStudentDao#0" />
+                <element signature="method#getUpdateQuery#0;class#MySqlStudentDao#0" />
+                <element signature="method#prepareStatementForInsert#0;class#MySqlStudentDao#0" />
+                <element signature="method#prepareStatementForDelete#0;class#MySqlStudentDao#0" />
+                <element signature="method#close#0;class#MySqlStudentDao#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/main/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1892">
-              <caret line="91" column="80" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="80" />
+            <state relative-caret-position="176">
+              <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -299,8 +257,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/mark.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/StudentFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/create.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/update.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/delete.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/a.jsp" />
@@ -310,22 +266,24 @@
         <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/StudentFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete2.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/dao/MarkDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mypage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MyServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/LessonServletJSP.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/mypage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/student.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlMarkDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlLessonDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MySessionListener.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java" />
       </list>
     </option>
@@ -360,10 +318,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="111" />
-    <option name="y" value="17" />
-    <option name="width" value="1612" />
-    <option name="height" value="877" />
+    <option name="x" value="183" />
+    <option name="y" value="29" />
+    <option name="width" value="1600" />
+    <option name="height" value="912" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -373,6 +331,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -413,15 +372,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chester" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Les1122" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chester" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -431,12 +381,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Les1122" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Les1122" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,8 +399,8 @@
     <property name="SearchEverywhereHistoryKey" value="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552410253765" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552604895884" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Servlets-JSP-102d194f6851e2b630f39fbfeb65897fc8e0c419" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -846,7 +801,63 @@
       <workItem from="1552293090304" duration="17669000" />
       <workItem from="1552377763883" duration="5424000" />
       <workItem from="1552390245732" duration="2262000" />
-      <workItem from="1552409276491" duration="781000" />
+      <workItem from="1552409276491" duration="7349000" />
+      <workItem from="1552459528938" duration="3646000" />
+      <workItem from="1552464950954" duration="2846000" />
+      <workItem from="1552484178069" duration="1582000" />
+      <workItem from="1552486010404" duration="107000" />
+      <workItem from="1552486141825" duration="104000" />
+      <workItem from="1552486273996" duration="10000" />
+      <workItem from="1552486294725" duration="125000" />
+      <workItem from="1552486855609" duration="224000" />
+      <workItem from="1552487121325" duration="49000" />
+      <workItem from="1552487194850" duration="559000" />
+      <workItem from="1552487817442" duration="19000" />
+      <workItem from="1552489192810" duration="13000" />
+      <workItem from="1552489226645" duration="279000" />
+      <workItem from="1552489576267" duration="1791000" />
+      <workItem from="1552491480426" duration="10000" />
+      <workItem from="1552491522803" duration="105000" />
+      <workItem from="1552491637943" duration="154000" />
+      <workItem from="1552491911463" duration="193000" />
+      <workItem from="1552492165501" duration="52000" />
+      <workItem from="1552492265082" duration="84000" />
+      <workItem from="1552492384041" duration="90000" />
+      <workItem from="1552492560453" duration="164000" />
+      <workItem from="1552492837846" duration="445000" />
+      <workItem from="1552493469792" duration="322000" />
+      <workItem from="1552494121348" duration="94000" />
+      <workItem from="1552494236790" duration="45000" />
+      <workItem from="1552494318450" duration="20000" />
+      <workItem from="1552494456839" duration="5758000" />
+      <workItem from="1552512683344" duration="2582000" />
+      <workItem from="1552553026705" duration="1423000" />
+      <workItem from="1552555802570" duration="137000" />
+      <workItem from="1552556367114" duration="48000" />
+      <workItem from="1552556430935" duration="90000" />
+      <workItem from="1552556567018" duration="216000" />
+      <workItem from="1552556829931" duration="209000" />
+      <workItem from="1552557062957" duration="18000" />
+      <workItem from="1552557102476" duration="142000" />
+      <workItem from="1552557262822" duration="45000" />
+      <workItem from="1552557382228" duration="611000" />
+      <workItem from="1552559576793" duration="1122000" />
+      <workItem from="1552560741273" duration="661000" />
+      <workItem from="1552562951334" duration="720000" />
+      <workItem from="1552575138622" duration="13000" />
+      <workItem from="1552576734461" duration="228000" />
+      <workItem from="1552576997808" duration="1961000" />
+      <workItem from="1552579081841" duration="194000" />
+      <workItem from="1552579552139" duration="85000" />
+      <workItem from="1552580214805" duration="994000" />
+      <workItem from="1552581353420" duration="149000" />
+      <workItem from="1552581561360" duration="2567000" />
+      <workItem from="1552585234442" duration="25000" />
+      <workItem from="1552585266117" duration="1966000" />
+      <workItem from="1552599972094" duration="111000" />
+      <workItem from="1552600142005" duration="1409000" />
+      <workItem from="1552601740407" duration="3050000" />
+      <workItem from="1552605151696" duration="4761000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2&#10;+JSP&#10;+LessonJSP, StudentJSP, MarkJSP&#10;+dependencies&#10;+MainStudentServlet">
       <created>1550136142981</created>
@@ -918,7 +929,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551788637659</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit 10&#10;12/03/19 16.00&#10;Student complete+&#10;HttpSessionListener">
+      <created>1552410298790</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1552410298790</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -954,7 +972,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347117000" />
+    <option name="totallyTimeSpent" value="398112000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -967,8 +985,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49598393" visible="true" weight="0.25321338" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49598393" visible="true" weight="0.18251929" />
       <window_info id="Structure" order="1" sideWeight="0.50401604" side_tool="true" weight="0.24678664" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -978,15 +997,15 @@
       <window_info id="Web" order="7" sideWeight="0.50401604" side_tool="true" weight="0.24678664" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49678662" visible="true" weight="0.65948856" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39165545" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49614397" weight="0.3580081" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49807197" weight="0.36970475" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32974428" />
-      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32974428" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974428" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50321335" side_tool="true" weight="0.3781965" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50385606" side_tool="true" weight="0.32839838" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32974428" />
       <window_info anchor="bottom" id="Application Servers" order="12" weight="0.32974428" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32974428" />
@@ -996,7 +1015,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.10025707" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="5" visible="true" weight="0.10025707" />
       <window_info anchor="right" id="Database" order="6" weight="0.16580977" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -1082,28 +1101,29 @@
     <MESSAGE value="commit 8&#10;22/02/19 14.30&#10;romped TOMCAT" />
     <MESSAGE value="commit 9&#10;01/03/19 16.00&#10;Student+&#10;JSP for all actions+&#10;validation 50/50 of ID" />
     <MESSAGE value="commit 10&#10;05/03/19 16.00&#10;All the methods of validation.&#10;validation of all lines. &#10;in JSP&#10;in controller&#10;+js pattern&#10;messages in form" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 10&#10;05/03/19 16.00&#10;All the methods of validation.&#10;validation of all lines. &#10;in JSP&#10;in controller&#10;+js pattern&#10;messages in form" />
+    <MESSAGE value="commit 10&#10;12/03/19 16.00&#10;Student complete+&#10;HttpSessionListener" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 10&#10;12/03/19 16.00&#10;Student complete+&#10;HttpSessionListener" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>195</line>
+          <url>file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java</url>
+          <line>149</line>
           <properties />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>174</line>
+          <line>98</line>
           <properties />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java</url>
-          <line>32</line>
+          <line>79</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1127,23 +1147,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lesson.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/b.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/a.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jsp" />
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/GenericServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1179,20 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/DaoFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1211,20 +1200,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete2.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/mypage.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainServlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/entities/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/MarkDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1253,20 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d1748af6-dffc-4e0b-b912-95a5cbabd520/schema/students_db/table/student">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlLessonDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6204">
@@ -1281,51 +1242,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MySessionListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/MainFrame.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="211" column="58" lean-forward="true" selection-start-line="211" selection-start-column="58" selection-end-line="211" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#doPost#0;class#MainStudentServlet#0" />
-            <element signature="method#deleteStudent#0;class#MainStudentServlet#0" />
-            <element signature="method#updateStudent#0;class#MainStudentServlet#0" />
-            <element signature="method#createStudent#0;class#MainStudentServlet#0" />
-            <element signature="method#getAllStudents#0;class#MainStudentServlet#0" />
-            <element signature="method#checkAction#0;class#MainStudentServlet#0" />
-            <element signature="method#validationId#0;class#MainStudentServlet#0" />
-            <element signature="method#validationNameAndSurname#0;class#MainStudentServlet#0" />
-            <element signature="method#validationYear#0;class#MainStudentServlet#0" />
-            <element signature="method#validationBirthDate#0;class#MainStudentServlet#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MySessionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="7" selection-start-column="2" selection-end-line="35" selection-end-column="3" />
+        <state relative-caret-position="308">
+          <caret line="14" column="28" selection-start-line="8" selection-start-column="24" selection-end-line="14" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="242">
+          <caret line="11" column="78" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/student.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        <state relative-caret-position="462">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlLessonDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2354">
+          <caret line="125" column="48" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MarkServletJSP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlMarkDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/entities/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/ConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="2410" selection-start-line="2410" selection-end-line="2410" />
         </state>
       </provider>
     </entry>
@@ -1336,48 +1313,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/ResultSetImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="13" selection-end-column="19" />
+        <state relative-caret-position="81510">
+          <caret line="3753" selection-start-line="3753" selection-end-line="3753" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/PreparedStatement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="37466">
+          <caret line="1746" selection-start-line="1746" selection-end-line="1746" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.sql/java/sql/PreparedStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="1518">
+          <caret line="95" column="8" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlMarkDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/dao/StudentDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="method#create#0;class#MySqlMarkDao#0" />
-            <element signature="method#getAll#0;class#MySqlMarkDao#0" />
-            <element signature="method#update#0;class#MySqlMarkDao#0" />
-            <element signature="method#delete#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForInsert#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForUpdate#0;class#MySqlMarkDao#0" />
-            <element signature="method#prepareStatementForDelete#0;class#MySqlMarkDao#0" />
-            <element signature="method#close#0;class#MySqlMarkDao#0" />
-          </folding>
+        <state relative-caret-position="141">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1892">
-          <caret line="91" column="80" selection-start-line="91" selection-start-column="16" selection-end-line="91" selection-end-column="80" />
+        <state relative-caret-position="264">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d1748af6-dffc-4e0b-b912-95a5cbabd520/schema/students_db/table/student">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameDelete.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameCreate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/StudentFrameUpdate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/mySqlDAO/MySqlStudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+          <folding>
+            <element signature="method#MySqlStudentDao#0;class#MySqlStudentDao#0" />
+            <element signature="method#update#0;class#MySqlStudentDao#0" />
+            <element signature="method#create#0;class#MySqlStudentDao#0" />
+            <element signature="method#delete#0;class#MySqlStudentDao#0" />
+            <element signature="method#getAll#0;class#MySqlStudentDao#0" />
+            <element signature="method#getCreateQuery#0;class#MySqlStudentDao#0" />
+            <element signature="method#getUpdateQuery#0;class#MySqlStudentDao#0" />
+            <element signature="method#prepareStatementForInsert#0;class#MySqlStudentDao#0" />
+            <element signature="method#prepareStatementForDelete#0;class#MySqlStudentDao#0" />
+            <element signature="method#close#0;class#MySqlStudentDao#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/by/chester/servlet/MainStudentServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#deleteStudent#0;class#MainStudentServlet#0" />
+            <element signature="method#createStudent#0;class#MainStudentServlet#0" />
+            <element signature="method#getAllStudents#0;class#MainStudentServlet#0" />
+            <element signature="method#checkAction#0;class#MainStudentServlet#0" />
+            <element signature="method#sessionCreated#0;class#MainStudentServlet#0" />
+            <element signature="method#sessionDestroyed#0;class#MainStudentServlet#0" />
+          </folding>
         </state>
       </provider>
     </entry>

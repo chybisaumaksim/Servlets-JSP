@@ -1,16 +1,18 @@
 package by.chester.main;
+
 import by.chester.dao.*;
 import by.chester.mySqlDAO.MySqlDaoFactory;
 import by.chester.entities.Lesson;
 import by.chester.entities.Mark;
 import by.chester.entities.Student;
+
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws PersistException {
 
-        MarkDao markDao= null;
-        LessonDao lessonDao= null;
+        MarkDao markDao = null;
+        LessonDao lessonDao = null;
         StudentDao studentDao = null;
         try {
             DaoFactory factory = new MySqlDaoFactory();
@@ -19,20 +21,20 @@ public class Main {
             markDao = factory.getMySqlMarkDao();
 //читаем всех студентов
             List<Student> students = studentDao.getAll();
-            for (Student st: students) {
-                System.out.println(st.getId()+" "+st.getName()+" "+st.getSurname()
-                        +" "+st.getBirthDate()+" "+st.getEnterYear());
+            for (Student st : students) {
+                System.out.println(st.getId() + " " + st.getName() + " " + st.getSurname()
+                        + " " + st.getBirthDate() + " " + st.getEnterYear());
             }
 //получаем все предметы одного студента вместе с их оценками
             List<Mark> marks = markDao.getAll();
-            for (Mark mk: marks) {
-                System.out.println(mk.getId()+" "+mk.getStudentId()+" "
-                        +mk.getLessonId()+" "+mk.getMark());
+            for (Mark mk : marks) {
+                System.out.println(mk.getId() + " " + mk.getStudentId() + " "
+                        + mk.getLessonId() + " " + mk.getMark());
             }
 //получаем все предметы
             List<Lesson> lessons = lessonDao.getAll();
-            for (Lesson ls: lessons) {
-                System.out.println(ls.getId()+" "+ls.getLesson());
+            for (Lesson ls : lessons) {
+                System.out.println(ls.getId() + " " + ls.getLesson());
             }
 //обновляем студента
             Student st4 = new Student();
@@ -81,29 +83,31 @@ public class Main {
             Lesson ls3 = new Lesson();
             ls3.setId(7);
             lessonDao.delete(ls3);
-        }catch (PersistException e) {
+//получение по ID
+            Student st = studentDao.getById(132);
+        } catch (PersistException e) {
             throw new PersistException("Ошибка Sql запроса в классе Main", e);
-        }finally {
+        } finally {
             try {
                 if (studentDao != null) {
                     studentDao.close();
                 }
             } catch (PersistException e) {
-                System.err.println("Ошибка закрытия studentDao"+e.getMessage());
+                System.err.println("Ошибка закрытия studentDao" + e.getMessage());
             }
             try {
-                if (lessonDao!= null) {
+                if (lessonDao != null) {
                     lessonDao.close();
                 }
-            }catch (PersistException e) {
-                System.err.println("Ошибка закрытия lessonDao"+e.getMessage());
+            } catch (PersistException e) {
+                System.err.println("Ошибка закрытия lessonDao" + e.getMessage());
             }
             try {
-                if (markDao!= null) {
+                if (markDao != null) {
                     markDao.close();
                 }
-            }catch (PersistException e) {
-                System.err.println("Ошибка закрытия markDao"+e.getMessage());
+            } catch (PersistException e) {
+                System.err.println("Ошибка закрытия markDao" + e.getMessage());
             }
         }
     }

@@ -9,9 +9,8 @@
 <form action="/" method="POST">
     <h1>Добро пожаловать</h1>
     <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
-    <br><a href="${pageContext.request.contextPath}/main?Delete">Удалить студента</a></br>
+    <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
     <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
-    <br><a href="${pageContext.request.contextPath}/main?Update">Обновить данные студента</a></br>
 </form>
 </body>
 </html>
