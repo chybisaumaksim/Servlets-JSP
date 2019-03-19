@@ -48,7 +48,7 @@ public class MySqlMarkDao implements MarkDao {
                 if (generatedId != null) {
                     generatedId.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -75,7 +75,7 @@ public class MySqlMarkDao implements MarkDao {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -86,7 +86,7 @@ public class MySqlMarkDao implements MarkDao {
         try {
             prepareStatementForUpdate(statementUpdate, mark);
             statementUpdate.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
@@ -95,7 +95,7 @@ public class MySqlMarkDao implements MarkDao {
         try {
             prepareStatementForDelete(statementDelete, mark);
             statementDelete.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new PersistException("Ошибка Sql запроса", e);
         }
     }
@@ -120,7 +120,7 @@ public class MySqlMarkDao implements MarkDao {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }

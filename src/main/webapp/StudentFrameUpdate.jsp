@@ -6,11 +6,70 @@
 </head>
 
 <body>
+<style>
+    <%@include file="/WEB-INF/css/myStyle.css"%>
+</style>
+<style>
+    <%@include file="/WEB-INF/css/menuStyle.css"%>
+</style>
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Студенты
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <form action="/" method="POST">
+            <div class="dropdown-content" id="myDropdown">
+                <br><a href="${pageContext.request.contextPath}/main?getAll">Список всех студентов</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
+            </div>
+        </form>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Предметы
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <form action="/" method="POST">
+            <div class="dropdown-content" id="myDropdown2">
+                <br><a href="${pageContext.request.contextPath}/main?getAll">Список всех студентов</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
+            </div>
+        </form>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Оценки
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <form action="/" method="POST">
+            <div class="dropdown-content" id="myDropdown3">
+                <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function (e) {
+        if (!e.target.matches('.dropbtn')) {
+            var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
+            }
+        }
+    }
+</script>
 <form action="<c:url value="/main"/>" method="POST">
     <b><% if (request.getAttribute("message") != null) { %>
+        <div id="ordinary" class="message">
         <c:forEach items="${message}" var="message">
             <br>${message}
         </c:forEach>
+        </div>
         <% } %></b>
     <input type="hidden" name="id" value="${student.id}"/>
     <table>
@@ -36,10 +95,8 @@
     <table>
         <tr>
         <td><input type="submit" value="Update" name="Update"/></td>
-        <td><input type="submit" value="Cancel" name="Cancel"/></td>
     </tr>
     </table>
-    <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
 </form>
 </body>
 </html>

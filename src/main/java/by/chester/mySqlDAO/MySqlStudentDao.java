@@ -57,7 +57,7 @@ public class MySqlStudentDao implements StudentDao {
                 if (generatedId != null) {
                     generatedId.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока ", e);
             }
         }
@@ -94,7 +94,7 @@ public class MySqlStudentDao implements StudentDao {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -105,24 +105,23 @@ public class MySqlStudentDao implements StudentDao {
         Student student = new Student();
         ResultSet rs = null;
         try {
-            PreparedStatement stm = connection.prepareStatement(SelectIdQuery());
-                stm.setInt(1, id);
-                rs = stm.executeQuery();
-                while (rs.next()) {
-                    student.setId(rs.getInt(1));
-                    student.setName(rs.getString(2));
-                    student.setSurname(rs.getString(3));
-                    student.setBirthDate(rs.getString(4));
-                    student.setEnterYear(rs.getInt(5));
-                }
+            statementSelectID.setInt(1, id);
+            rs = statementSelectID.executeQuery();
+            while (rs.next()) {
+                student.setId(rs.getInt(1));
+                student.setName(rs.getString(2));
+                student.setSurname(rs.getString(3));
+                student.setBirthDate(rs.getString(4));
+                student.setEnterYear(rs.getInt(5));
+            }
         } catch (SQLException e) {
-            throw new PersistException("Ошибка обращения к БД ", e);
+            throw new PersistException("Ошибка получения студента по id ", e);
         } finally {
             try {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -212,5 +211,14 @@ public class MySqlStudentDao implements StudentDao {
             throw new PersistException("Ошибка закрытия Connection", e);
         }
     }
+
+    @Override
+    public boolean equals(Student st1, Student st2) {
+        return st1.getName().equals(st2.getName())
+                && st1.getSurname().equals(st2.getSurname())
+                && st1.getBirthDate().equals(st2.getBirthDate())
+                && st1.getEnterYear()==st2.getEnterYear();
+    }
+
 }
 

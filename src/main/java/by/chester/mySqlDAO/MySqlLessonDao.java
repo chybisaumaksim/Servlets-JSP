@@ -48,7 +48,7 @@ public class MySqlLessonDao implements LessonDao {
                 if (generatedId != null) {
                     generatedId.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -73,7 +73,7 @@ public class MySqlLessonDao implements LessonDao {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }
@@ -116,7 +116,7 @@ public class MySqlLessonDao implements LessonDao {
                 if (rs != null) {
                     rs.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 throw new PersistException("Ошибка закрытия потока", e);
             }
         }

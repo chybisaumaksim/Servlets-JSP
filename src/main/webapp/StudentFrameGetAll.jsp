@@ -1,9 +1,8 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
-    <title>Удаление студента</title>
+    <title>Students</title>
 </head>
 <body>
 <style>
@@ -63,35 +62,24 @@
         }
     }
 </script>
-<b><% if (request.getAttribute("message") != null) { %>
-    <div id="success" class="message">
-        <%=request.getAttribute("message")%>
-    </div>
-    <% } %></b>
+<table width="100%" cellpadding="1" cellspacing="1">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>SurName</td>
+        <td>BirthDate</td>
+        <td>EnterYear</td>
+    </tr>
 
-<form action="<c:url value="/main"/>" method="POST">
-    <table width="100%" cellpadding="1" cellspacing="1">
-        <tr>
-            <td></td>
-            <td>Имя</td>
-            <td>Фамилия</td>
-            <td>Дата рождения</td>
-            <td>Год поступления</td>
-            <td>Удалить</td>
-            <td>Править</td>
-        </tr>
-        <c:forEach items="${student}" var="student">
-            <tr>
-                <td><input type="radio" name="id" value="${student.id}"></td>
-                <td><c:out value="${student.name}"/></td>
-                <td><c:out value="${student.surname}"/></td>
-                <td><c:out value="${student.birthDate}"/></td>
-                <td><c:out value="${student.enterYear}"/></td>
-                <td><input type="submit" value="Удалить" name="Delete"/></td>
-                <td><input type="submit" value="Править" name="Update"/></td>
-            </tr>
-        </c:forEach>
-    </table>
-</form>
+    <c:forEach items="${students}" var="students">
+    <tr>
+        <td>${students.id}</td>
+        <td>${students.name}</td>
+        <td>${students.surname}</td>
+        <td>${students.birthDate}</td>
+        <td>${students.enterYear}</td>
+    </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

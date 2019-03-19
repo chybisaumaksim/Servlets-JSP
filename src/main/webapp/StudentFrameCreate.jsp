@@ -1,11 +1,68 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
 <head>
     <title>Добавить студента</title>
 </head>
 <body>
+<style>
+    <%@include file="/WEB-INF/css/myStyle.css"%>
+</style>
+<style>
+    <%@include file="/WEB-INF/css/menuStyle.css"%>
+</style>
+</head>
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Студенты
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <form action="/" method="POST">
+            <div class="dropdown-content" id="myDropdown">
+                <br><a href="${pageContext.request.contextPath}/main?getAll">Список всех студентов</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
+            </div>
+        </form>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Предметы
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <form action="/" method="POST">
+            <div class="dropdown-content" id="myDropdown2">
+                <br><a href="${pageContext.request.contextPath}/main?getAll">Список всех студентов</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
+            </div>
+        </form>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Оценки
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <form action="/" method="POST">
+            <div class="dropdown-content" id="myDropdown3">
+                <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Delete">Редактировать студента</a></br>
+                <br><a href="${pageContext.request.contextPath}/main?Create">Добавить студента</a></br>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function (e) {
+        if (!e.target.matches('.dropbtn')) {
+            var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
+            }
+        }
+    }
+</script>
 <form action="<c:url value="/main"/>" method="POST">
     <b><% if (request.getAttribute("message") != null) { %>
         <c:forEach items="${message}" var="message">
@@ -35,10 +92,8 @@
     <table>
         <tr>
             <td><input type="submit" value="Create" name="Create"/></td>
-            <td><input type="submit" value="Cancel" name="Cancel"/></td>
         </tr>
     </table>
-    <br><a href="${pageContext.request.contextPath}/main?getAll">Отобразить студентов</a></br>
 </form>
 </body>
 </html>

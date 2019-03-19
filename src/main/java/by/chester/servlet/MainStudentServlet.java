@@ -4,6 +4,7 @@ import by.chester.dao.PersistException;
 import by.chester.dao.StudentDao;
 import by.chester.entities.Student;
 import by.chester.mySqlDAO.MySqlDaoFactory;
+import by.chester.mySqlDAO.MySqlStudentDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebListener;
@@ -62,6 +63,7 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
                 student.setId(Integer.parseInt(id));
                 int sizeBefore = studentDao.getAll().size();
                 studentDao.delete(student);
+                req.setAttribute("student", studentDao.getAll());
                 if (!(sizeBefore == studentDao.getAll().size())) {
                     req.setAttribute("message", "Запись студента удалена успешно");
                 } else {
@@ -165,7 +167,7 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
         try {
             List<Student> students = studentDao.getAll();
             req.setAttribute("students", students);
-            getServletContext().getRequestDispatcher("/student.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/StudentFrameGetAll.jsp").forward(req, resp);
         } catch (IOException | PersistException | ServletException e) {
             throw new PersistException(e.getMessage() + "Ошибка получения всех записей студентов");
         }

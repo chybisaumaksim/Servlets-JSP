@@ -84,7 +84,9 @@ public class Main {
             ls3.setId(7);
             lessonDao.delete(ls3);
 //получение по ID
-            Student st = studentDao.getById(132);
+            Student st = studentDao.getById(139);
+//            System.out.println(st);
+//            System.out.println(st.getBirthDate());
         } catch (PersistException e) {
             throw new PersistException("Ошибка Sql запроса в классе Main", e);
         } finally {

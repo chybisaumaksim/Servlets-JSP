@@ -13,4 +13,6 @@ public interface StudentDao {
     void delete(Student student) throws PersistException;
     void close() throws PersistException;
     Student getById (int id) throws PersistException;
+
+    boolean equals(Student st1, Student st2);
 }
