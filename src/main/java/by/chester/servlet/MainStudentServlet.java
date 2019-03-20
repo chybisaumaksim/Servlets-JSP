@@ -4,7 +4,6 @@ import by.chester.dao.PersistException;
 import by.chester.dao.StudentDao;
 import by.chester.entities.Student;
 import by.chester.mySqlDAO.MySqlDaoFactory;
-import by.chester.mySqlDAO.MySqlStudentDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebListener;
@@ -12,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/main")
@@ -23,7 +21,11 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
         try {
             processRequest(req, resp);
         } catch (PersistException e) {
-            e.printStackTrace();
+            try {
+                throw new PersistException(e.getMessage() + "Ошибка обработки запроса");
+            } catch (PersistException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 
@@ -58,16 +60,15 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
             String id = req.getParameter("id");
             List<Student> students = studentDao.getAll();
             req.setAttribute("student", students);
-            if (id == null) {
-            } else {
+            if (id != null) {
                 student.setId(Integer.parseInt(id));
                 int sizeBefore = studentDao.getAll().size();
                 studentDao.delete(student);
                 req.setAttribute("student", studentDao.getAll());
                 if (!(sizeBefore == studentDao.getAll().size())) {
-                    req.setAttribute("message", "Запись студента удалена успешно");
+                    req.setAttribute("messageDelete", "Запись студента удалена успешно");
                 } else {
-                    req.setAttribute("message", "Ошибка. Такой записи не существует");
+                    req.setAttribute("messageDelete", "Ошибка. Такой записи не существует");
                 }
             }
             getServletContext().getRequestDispatcher("/StudentFrameDelete.jsp").forward(req, resp);
@@ -86,33 +87,34 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
             if (!nameIsValid) {
                 req.setAttribute("student", studentDao.getById(Integer.parseInt(id)));
             }
-            List<String> messages = new ArrayList<>();
-            if (id == null) {
-            } else if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
+            if (id != null && req.getParameter("name") != null && req.getParameter("surname") != null
+                    && req.getParameter("birthDate") != null
+                    && req.getParameter("enterYear") != null) {
                 Student student = new Student();
                 student.setId(Integer.parseInt(id));
                 student.setName(req.getParameter("name"));
                 student.setSurname(req.getParameter("surname"));
                 student.setBirthDate(req.getParameter("birthDate"));
                 student.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
-                studentDao.update(student);
                 req.setAttribute("student", student);
-                req.setAttribute("message", "Студент обновлен успешно");
+                if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
+                    studentDao.update(student);
+                    req.setAttribute("messageSuccess", "Студент обновлен успешно");
+                } else {
+                        req.setAttribute("messageFall", "Ошибка обновления записи о студенте");
+                    }
             }
             if (req.getParameter("name") != null && !nameIsValid) {
-                messages.add("неверный формат имени");
+                req.setAttribute("messageForName", "неверный формат имени");
             }
             if (req.getParameter("surname") != null && !surnameIsValid) {
-                messages.add("неверный формат фамилии");
+                req.setAttribute("messageForSurname", "неверный формат фамилии");
             }
             if (req.getParameter("birthDate") != null && !birthDateIsValid) {
-                messages.add("неверный формат дня рождения");
+                req.setAttribute("messageForBirthDate", "неверный формат дня рождения");
             }
             if (req.getParameter("enterYear") != null && !yearIsValid) {
-                messages.add("неверный формат года поступления");
-            }
-            if (messages.size() > 0) {
-                req.setAttribute("message", messages);
+                req.setAttribute("messageForEnterYear", "неверный формат года поступления");
             }
             getServletContext().getRequestDispatcher("/StudentFrameUpdate.jsp").forward(req, resp);
         } catch (IOException | PersistException | ServletException e) {
@@ -127,35 +129,35 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
             boolean surnameIsValid = validationNameAndSurname(req.getParameter("surname"));
             boolean birthDateIsValid = validationBirthDate(req.getParameter("birthDate"));
             boolean yearIsValid = validationYear(req.getParameter("enterYear"));
-            if (req.getParameter("name") == null) {
-            } else if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
+            if (req.getParameter("name") != null && req.getParameter("surname") != null
+                    && req.getParameter("birthDate") != null
+                    && req.getParameter("enterYear") != null) {
                 student.setName(req.getParameter("name"));
                 student.setSurname(req.getParameter("surname"));
                 student.setBirthDate(req.getParameter("birthDate"));
                 student.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
-                int sizeBefore = studentDao.getAll().size();
-                studentDao.create(student);
-                if (!(sizeBefore == studentDao.getAll().size())) {
-                    req.setAttribute("message", "Запись студента создана успешно");
+                req.setAttribute("student", student);
+                if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
+                    int sizeBefore = studentDao.getAll().size();
+                    studentDao.create(student);
+                    if (!(sizeBefore == studentDao.getAll().size())) {
+                        req.setAttribute("messageSuccess", "Запись студента создана успешно");
+                    }
                 } else {
-                    req.setAttribute("message", "Ошибка создания записи о студенте");
+                    req.setAttribute("messageFall", "Ошибка создания записи о студенте");
                 }
             }
-            List<String> messages = new ArrayList<>();
             if (req.getParameter("name") != null && !nameIsValid) {
-                messages.add("неверный формат имени");
+                req.setAttribute("messageForName", "неверный формат имени");
             }
             if (req.getParameter("surname") != null && !surnameIsValid) {
-                messages.add("неверный формат фамилии");
+                req.setAttribute("messageForSurname", "неверный формат фамилии");
             }
             if (req.getParameter("birthDate") != null && !birthDateIsValid) {
-                messages.add("неверный формат дня рождения");
+                req.setAttribute("messageForBirthDate", "неверный формат дня рождения");
             }
             if (req.getParameter("enterYear") != null && !yearIsValid) {
-                messages.add("неверный формат года поступления");
-            }
-            if (messages.size() > 0) {
-                req.setAttribute("message", messages);
+                req.setAttribute("messageForEnterYear", "неверный формат года поступления");
             }
             getServletContext().getRequestDispatcher("/StudentFrameCreate.jsp").forward(req, resp);
         } catch (IOException | PersistException | ServletException e) {

@@ -50,11 +50,26 @@ b {
     color: #ffffff;
 }
 .message#ordinary{
+    color: red;
     background-color: #4ea5cd;
     border-left:0px #3b8eb5 solid;
     color: #ffffff;
 }
+.message#fall{
+    background-color:tomato;
+    border-left:7px #dc3d21 solid;
+    color:white;
+}
 
-
-
-
+.text#error1{
+    color: red;
+}
+.text#error2{
+    color: red;
+}
+.text#error3{
+    color: red;
+}
+.text#error4{
+    color: red;
+}

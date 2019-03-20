@@ -50,17 +50,7 @@
     </div>
 </div>
 <script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    window.onclick = function (e) {
-        if (!e.target.matches('.dropbtn')) {
-            var myDropdown = document.getElementById("myDropdown");
-            if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
-            }
-        }
-    }
+    <%@include file="/WEB-INF/js/index.js"%>
 </script>
 <table width="100%" cellpadding="1" cellspacing="1">
     <tr>

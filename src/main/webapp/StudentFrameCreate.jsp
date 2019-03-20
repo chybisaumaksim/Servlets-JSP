@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Добавить студента</title>
+    <title>обновление списка студентов</title>
 </head>
 <body>
 <style>
@@ -51,47 +51,72 @@
     </div>
 </div>
 <script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    window.onclick = function (e) {
-        if (!e.target.matches('.dropbtn')) {
-            var myDropdown = document.getElementById("myDropdown");
-            if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
-            }
-        }
-    }
+    <%@include file="/WEB-INF/js/index.js"%>
 </script>
 <form action="<c:url value="/main"/>" method="POST">
-    <b><% if (request.getAttribute("message") != null) { %>
-        <c:forEach items="${message}" var="message">
-            <br>${message}
-        </c:forEach>
-        <% } %></b>
+    <b><% if (request.getAttribute("messageSuccess") != null) { %>
+        <div id="success" class="message">
+            <%=request.getAttribute("messageSuccess")%>
+        </div>
+        <% } else if (request.getAttribute("messageFall") != null) { %>
+        <div id="fall" class="message">
+            <%=request.getAttribute("messageFall")%>
+        </div>
+        <% } %>
+    </b>
     <table>
+
         <tr>
             <td>Имя:</td>
             <td><input type="text" name="name" value="${student.name}" required pattern="^[a-zA-Zа-яёА-ЯЁ]+$"/></td>
+            <% if (request.getAttribute("messageForName") != null) { %>
+            <td>
+                <div id="error1" class="text">
+                    <%=request.getAttribute("messageForName")%>
+                </div>
+            </td>
+            <% } %>
         </tr>
         <tr>
             <td>Фамилия:</td>
-            <td><input type="text" name="surname" value="${student.surname}" required pattern="^[a-zA-Zа-яёА-ЯЁ]+$"/>
+            <td><input type="text" name="surname" value="${student.surname}" required
+                       pattern="^[a-zA-Zа-яёА-ЯЁ]+$"/>
+                    <% if (request.getAttribute("messageForSurname") != null) { %>
+            <td>
+                <div id="error2" class="text">
+                    <%=request.getAttribute("messageForSurname")%>
+                </div>
             </td>
+            <% } %>
         </tr>
         <tr>
             <td>Дата рождения:</td>
             <td><input type="text" name="birthDate" value="${student.birthDate}" required
                        pattern="^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"/></td>
+            <% if (request.getAttribute("messageForBirthDate") != null) { %>
+            <td>
+                <div id="error3" class="text">
+                    <%=request.getAttribute("messageForBirthDate")%>
+                </div>
+            </td>
+            <% } %>
         </tr>
         <tr>
             <td>Год поступления:</td>
             <td><input type="text" name="enterYear" value="${student.enterYear}" required pattern="^[0-9]{4}"/></td>
+            <% if (request.getAttribute("messageForEnterYear") != null) { %>
+            <td>
+                <div id="error4" class="text">
+                    <%=request.getAttribute("messageForEnterYear")%>
+                </div>
+            </td>
+            <% } %>
         </tr>
+
     </table>
     <table>
         <tr>
-            <td><input type="submit" value="Create" name="Create"/></td>
+            <td><input type="submit" value="Создать" name="Create"/></td>
         </tr>
     </table>
 </form>

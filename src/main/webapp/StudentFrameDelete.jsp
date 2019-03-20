@@ -50,22 +50,12 @@
         </form>
     </div>
 </div>
-<script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-    window.onclick = function (e) {
-        if (!e.target.matches('.dropbtn')) {
-            var myDropdown = document.getElementById("myDropdown");
-            if (myDropdown.classList.contains('show')) {
-                myDropdown.classList.remove('show');
-            }
-        }
-    }
+<script><script>
+    <%@include file="/WEB-INF/js/index.js"%>
 </script>
-<b><% if (request.getAttribute("message") != null) { %>
+<b><% if (request.getAttribute("messageDelete") != null) { %>
     <div id="success" class="message">
-        <%=request.getAttribute("message")%>
+        <%=request.getAttribute("messageDelete")%>
     </div>
     <% } %></b>
 
