@@ -22,7 +22,7 @@ public class MySqlMarkDao implements MarkDao {
     protected MySqlMarkDao(Connection connection) throws PersistException {
         try {
             this.connection = connection;
-            statementCreate = connection.prepareStatement(getCreateQuery());
+            statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
             statementUpdate = connection.prepareStatement(getUpdateQuery());
             statementDelete = connection.prepareStatement(getDeleteQuery());
             statementSelectID = connection.prepareStatement(SelectIdQuery());
@@ -128,23 +128,23 @@ public class MySqlMarkDao implements MarkDao {
     }
 
     private String getSelectAll() {
-        return "SELECT id, student_Id, lesson_Id, mark FROM mark ";
+        return "SELECT id, student_Id, lesson_Id, mark FROM MARK ";
     }
 
     private String getCreateQuery() {
-        return "INSERT INTO Mark (student_Id, lesson_Id, mark) VALUES (?, ?, ?);";
+        return "INSERT INTO MARK (student_Id, lesson_Id, mark) VALUES (?, ?, ?) ; ";
     }
 
     private String getUpdateQuery() {
-        return "UPDATE Mark SET MARK = ? WHERE id = ? ";
+        return "UPDATE MARK SET MARK = ? WHERE id = ? " ;
     }
 
     private String getDeleteQuery() {
-        return "DELETE FROM Mark WHERE id= ?;";
+        return "DELETE FROM MARK WHERE id= ?; ";
     }
 
     private String SelectIdQuery() {
-        return "SELECT id, student_Id, lesson_Id, mark FROM mark WHERE ID = ? ; ";
+        return "SELECT id, student_Id, lesson_Id, mark FROM MARK WHERE ID = ? ; ";
     }
 
     private void prepareStatementForInsert(PreparedStatement statement, Mark object) throws PersistException {

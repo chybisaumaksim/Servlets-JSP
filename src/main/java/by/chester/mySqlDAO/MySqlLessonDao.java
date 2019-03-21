@@ -22,7 +22,7 @@ public class MySqlLessonDao implements LessonDao {
     protected MySqlLessonDao(Connection connection) throws PersistException {
         try {
             this.connection = connection;
-            statementCreate = connection.prepareStatement(getCreateQuery());
+            statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
             statementUpdate = connection.prepareStatement(getUpdateQuery());
             statementDelete = connection.prepareStatement(getDeleteQuery());
             statementSelectID = connection.prepareStatement(SelectIdQuery());

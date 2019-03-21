@@ -57,9 +57,12 @@
         <div id="success" class="message">
             <%=request.getAttribute("messageSuccess")%>
         </div>
-        <% } else if (request.getAttribute("messageFall") != null) { %>
+        <% } else if (request.getAttribute("messageForName") != null
+                || request.getAttribute("messageForSurname") != null
+                || request.getAttribute("messageForBirthDate") != null
+                || request.getAttribute("messageForEnterYear") != null) { %>
         <div id="fall" class="message">
-            <%=request.getAttribute("messageFall")%>
+            "Ошибка создания записи о студенте"
         </div>
         <% } %>
     </b>
