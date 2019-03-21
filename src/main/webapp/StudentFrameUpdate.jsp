@@ -1,10 +1,9 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>обновление списка студентов</title>
 </head>
-
 <body>
 <style>
     <%@include file="/WEB-INF/css/myStyle.css"%>

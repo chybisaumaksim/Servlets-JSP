@@ -55,10 +55,10 @@
 <table width="100%" cellpadding="1" cellspacing="1">
     <tr>
         <td>Id</td>
-        <td>Name</td>
-        <td>SurName</td>
-        <td>BirthDate</td>
-        <td>EnterYear</td>
+        <td>Имя</td>
+        <td>Фамилия</td>
+        <td>Дата рождения</td>
+        <td>Год поступления</td>
     </tr>
 
     <c:forEach items="${students}" var="students">

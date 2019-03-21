@@ -11,7 +11,6 @@
 <style>
     <%@include file="/WEB-INF/css/menuStyle.css"%>
 </style>
-</head>
 <div class="navbar">
     <div class="dropdown">
         <button class="dropbtn" onclick="myFunction()">Студенты
@@ -53,6 +52,7 @@
 <script>
     <%@include file="/WEB-INF/js/index.js"%>
 </script>
+
 <form action="<c:url value="/main"/>" method="POST">
     <b><% if (request.getAttribute("messageSuccess") != null) { %>
         <div id="success" class="message">
@@ -65,7 +65,6 @@
         <% } %>
     </b>
     <table>
-
         <tr>
             <td>Имя:</td>
             <td><input type="text" name="name" value="${student.name}" required pattern="^[a-zA-Zа-яёА-ЯЁ]+$"/></td>

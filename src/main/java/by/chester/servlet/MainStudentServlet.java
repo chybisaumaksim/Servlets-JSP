@@ -21,11 +21,7 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
         try {
             processRequest(req, resp);
         } catch (PersistException e) {
-            try {
-                throw new PersistException(e.getMessage() + "Ошибка обработки запроса");
-            } catch (PersistException e1) {
-                e1.printStackTrace();
-            }
+            System.err.println("Ошибка обработки запроса doGet " + e.getMessage());
         }
     }
 
@@ -33,7 +29,7 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
         try {
             processRequest(req, resp);
         } catch (PersistException e) {
-            e.printStackTrace();
+            System.err.printf("Ошибка обработки запроса doPost \n" + e.getMessage());
         }
     }
 
@@ -62,14 +58,11 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
             req.setAttribute("student", students);
             if (id != null) {
                 student.setId(Integer.parseInt(id));
-                int sizeBefore = studentDao.getAll().size();
                 studentDao.delete(student);
                 req.setAttribute("student", studentDao.getAll());
-                if (!(sizeBefore == studentDao.getAll().size())) {
-                    req.setAttribute("messageDelete", "Запись студента удалена успешно");
-                } else {
-                    req.setAttribute("messageDelete", "Ошибка. Такой записи не существует");
-                }
+                req.setAttribute("messageDelete", "Запись студента удалена успешно");
+            } else {
+                req.setAttribute("messageDelete", "Ошибка. Такой записи не существует");
             }
             getServletContext().getRequestDispatcher("/StudentFrameDelete.jsp").forward(req, resp);
         } catch (IOException | PersistException | ServletException e) {
@@ -79,30 +72,33 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
 
     private void updateStudent(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) throws PersistException, IOException, ServletException {
         try {
-            boolean nameIsValid = validationNameAndSurname(req.getParameter("name"));
-            boolean surnameIsValid = validationNameAndSurname(req.getParameter("surname"));
-            boolean birthDateIsValid = validationBirthDate(req.getParameter("birthDate"));
-            boolean yearIsValid = validationYear(req.getParameter("enterYear"));
             String id = req.getParameter("id");
+            String name = req.getParameter("name");
+            String surname = req.getParameter("surname");
+            String birthDate = req.getParameter("birthDate");
+            String enterYear = req.getParameter("enterYear");
+            boolean nameIsValid = validationNameAndSurname(name);
+            boolean surnameIsValid = validationNameAndSurname(surname);
+            boolean birthDateIsValid = validationBirthDate(birthDate);
+            boolean yearIsValid = validationYear(enterYear);
             if (!nameIsValid) {
                 req.setAttribute("student", studentDao.getById(Integer.parseInt(id)));
             }
-            if (id != null && req.getParameter("name") != null && req.getParameter("surname") != null
-                    && req.getParameter("birthDate") != null
-                    && req.getParameter("enterYear") != null) {
+            if (id != null && name != null && surname != null && birthDate != null
+                    && enterYear != null) {
                 Student student = new Student();
                 student.setId(Integer.parseInt(id));
-                student.setName(req.getParameter("name"));
-                student.setSurname(req.getParameter("surname"));
-                student.setBirthDate(req.getParameter("birthDate"));
-                student.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
+                student.setName(name);
+                student.setSurname(surname);
+                student.setBirthDate(birthDate);
+                student.setEnterYear(Integer.parseInt(enterYear));
                 req.setAttribute("student", student);
                 if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
                     studentDao.update(student);
                     req.setAttribute("messageSuccess", "Студент обновлен успешно");
                 } else {
-                        req.setAttribute("messageFall", "Ошибка обновления записи о студенте");
-                    }
+                    req.setAttribute("messageFall", "Ошибка обновления записи о студенте");
+                }
             }
             if (req.getParameter("name") != null && !nameIsValid) {
                 req.setAttribute("messageForName", "неверный формат имени");
@@ -125,24 +121,23 @@ public class MainStudentServlet extends HttpServlet implements HttpSessionListen
     private void createStudent(HttpServletRequest req, HttpServletResponse resp, StudentDao studentDao) throws IOException, PersistException, ServletException {
         try {
             Student student = new Student();
-            boolean nameIsValid = validationNameAndSurname(req.getParameter("name"));
-            boolean surnameIsValid = validationNameAndSurname(req.getParameter("surname"));
-            boolean birthDateIsValid = validationBirthDate(req.getParameter("birthDate"));
-            boolean yearIsValid = validationYear(req.getParameter("enterYear"));
-            if (req.getParameter("name") != null && req.getParameter("surname") != null
-                    && req.getParameter("birthDate") != null
-                    && req.getParameter("enterYear") != null) {
-                student.setName(req.getParameter("name"));
-                student.setSurname(req.getParameter("surname"));
-                student.setBirthDate(req.getParameter("birthDate"));
-                student.setEnterYear(Integer.parseInt(req.getParameter("enterYear")));
+            String name = req.getParameter("name");
+            String surname = req.getParameter("surname");
+            String birthDate = req.getParameter("birthDate");
+            String enterYear = req.getParameter("enterYear");
+            boolean nameIsValid = validationNameAndSurname(name);
+            boolean surnameIsValid = validationNameAndSurname(surname);
+            boolean birthDateIsValid = validationBirthDate(birthDate);
+            boolean yearIsValid = validationYear(enterYear);
+            if (name != null && surname != null && birthDate != null && enterYear != null) {
+                student.setName(name);
+                student.setSurname(surname);
+                student.setBirthDate(birthDate);
+                student.setEnterYear(Integer.parseInt(enterYear));
                 req.setAttribute("student", student);
                 if (nameIsValid && surnameIsValid && birthDateIsValid && yearIsValid) {
-                    int sizeBefore = studentDao.getAll().size();
                     studentDao.create(student);
-                    if (!(sizeBefore == studentDao.getAll().size())) {
-                        req.setAttribute("messageSuccess", "Запись студента создана успешно");
-                    }
+                    req.setAttribute("messageSuccess", "Запись студента создана успешно");
                 } else {
                     req.setAttribute("messageFall", "Ошибка создания записи о студенте");
                 }

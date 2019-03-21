@@ -39,15 +39,15 @@ public class Main {
 //обновляем студента
             Student st4 = new Student();
             st4.setId(3);
-            st4.setName("Virtor");
-            st4.setSurname("Pipkin");
+            st4.setName("Виктор");
+            st4.setSurname("Попов");
             st4.setBirthDate("19890101");
             st4.setEnterYear(2006);
             studentDao.update(st4);
 //обновляем предмет
             Lesson ls2 = new Lesson();
             ls2.setId(2);
-            ls2.setLesson("Chemistry");
+            ls2.setLesson("Химия");
             lessonDao.update(ls2);
 //обновляем оценку
             Mark mr2 = new Mark();
@@ -56,14 +56,14 @@ public class Main {
             markDao.update(mr2);
 //добавляем студента
             Student st1 = new Student();
-            st1.setName("Dmitrii");
-            st1.setSurname("Novoselov");
+            st1.setName("Дмитрий");
+            st1.setSurname("Новоселов");
             st1.setBirthDate("19861009");
             st1.setEnterYear(2008);
             studentDao.create(st1);
 //добавляем предмет
             Lesson ls1 = new Lesson();
-            ls1.setLesson("Informatics");
+            ls1.setLesson("Информатика");
             lessonDao.create(ls1);
 //добавляем оценку
             Mark mr1 = new Mark();
@@ -84,7 +84,7 @@ public class Main {
             ls3.setId(7);
             lessonDao.delete(ls3);
 //получение по ID
-            Student st = studentDao.getById(139);
+//            Student st = studentDao.getById(139);
 //            System.out.println(st);
 //            System.out.println(st.getBirthDate());
         } catch (PersistException e) {

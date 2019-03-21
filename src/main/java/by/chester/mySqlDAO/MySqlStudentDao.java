@@ -3,6 +3,7 @@ package by.chester.mySqlDAO;
 import by.chester.dao.PersistException;
 import by.chester.dao.StudentDao;
 import by.chester.entities.Student;
+import com.mysql.jdbc.Statement;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +23,7 @@ public class MySqlStudentDao implements StudentDao {
     protected MySqlStudentDao(Connection connection) throws PersistException {
         try {
             this.connection = connection;
-            statementCreate = connection.prepareStatement(getCreateQuery());
+            statementCreate = connection.prepareStatement(getCreateQuery(), PreparedStatement.RETURN_GENERATED_KEYS);
             statementUpdate = connection.prepareStatement(getUpdateQuery());
             statementDelete = connection.prepareStatement(getDeleteQuery());
             statementSelectID = connection.prepareStatement(SelectIdQuery());
@@ -51,7 +52,7 @@ public class MySqlStudentDao implements StudentDao {
                 statementSelectID.setInt(1, id);
             }
         } catch (Exception e) {
-            throw new PersistException("Невозможно записать данные в БД", e);
+             throw new PersistException("Невозможно записать данные в БД ", e);
         } finally {
             try {
                 if (generatedId != null) {
@@ -129,7 +130,7 @@ public class MySqlStudentDao implements StudentDao {
     }
 
     private String getCreateQuery() {
-        return "INSERT INTO student (First_Name, Second_Name, Birth_Date, Enter_Year) \n  VALUES (?, ?, ?, ?);";
+        return "INSERT INTO student (First_Name, Second_Name, Birth_Date, Enter_Year) \n  VALUES (?, ?, ?, ?) ; ";
     }
 
     private String getSelectAll() {
@@ -137,7 +138,7 @@ public class MySqlStudentDao implements StudentDao {
     }
 
     private String getUpdateQuery() {
-        return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ?;";
+        return "UPDATE Student SET First_Name = ?, Second_Name  = ?, Birth_Date = ?, Enter_Year = ? WHERE id = ? ;";
     }
 
     private String getDeleteQuery() {

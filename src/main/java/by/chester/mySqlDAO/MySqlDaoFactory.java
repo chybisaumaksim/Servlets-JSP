@@ -1,4 +1,5 @@
 package by.chester.mySqlDAO;
+
 import by.chester.dao.*;
 
 import java.io.FileNotFoundException;
@@ -12,7 +13,7 @@ import java.util.Properties;
 public class MySqlDaoFactory implements DaoFactory {
     private static Connection connection;
 
-    public MySqlDaoFactory()  throws PersistException {
+    public MySqlDaoFactory() throws PersistException {
         try {
             MySqlDaoFactory.getConnection();
         } catch (PersistException e) {
@@ -22,7 +23,7 @@ public class MySqlDaoFactory implements DaoFactory {
 
     private static Connection getConnection() throws PersistException {
         Properties prop = new Properties();
-        InputStream is=null;
+        InputStream is = null;
         try {
             is = MySqlDaoFactory.class.getClassLoader()
                     .getResourceAsStream("config.properties");
@@ -37,14 +38,14 @@ public class MySqlDaoFactory implements DaoFactory {
         } catch (IOException e) {
             throw new PersistException("Ошибка при работе с потоком fileInputStream", e);
         } catch (ClassNotFoundException e) {
-            throw new PersistException("Класс "+prop.getProperty("driver")+" не найден", e);
+            throw new PersistException("Класс " + prop.getProperty("driver") + " не найден", e);
         } finally {
             try {
                 if (is != null) {
                     is.close();
                 }
             } catch (IOException e) {
-                System.err.println("Ошибка закрытия потока InputStream"+e.getMessage());
+                System.err.println("Ошибка закрытия потока InputStream" + e.getMessage());
             }
         }
         return connection;
@@ -55,12 +56,14 @@ public class MySqlDaoFactory implements DaoFactory {
     public MarkDao getMySqlMarkDao() throws PersistException {
         return new MySqlMarkDao(connection);
     }
+
     @Override
     public StudentDao getMySqlStudentDao() throws PersistException {
         return new MySqlStudentDao(connection);
     }
+
     @Override
-    public LessonDao getMySqlLessonDao()throws PersistException {
+    public LessonDao getMySqlLessonDao() throws PersistException {
         return new MySqlLessonDao(connection);
     }
 }
